@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon (2).ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="SWUST OJ  算法分析A（卓越1601）实验一 Euclid’s Game 翻煎饼 Locker doors The Josephus Problem Binary search">
+<meta name="keywords" content="算法分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析">
+<meta property="og:url" content="http://yoursite.com/2018/04/22/算法分析/index.html">
+<meta property="og:site_name" content="cici的blog">
+<meta property="og:description" content="SWUST OJ  算法分析A（卓越1601）实验一 Euclid’s Game 翻煎饼 Locker doors The Josephus Problem Binary search">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-22T09:30:15.244Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法分析">
+<meta name="twitter:description" content="SWUST OJ  算法分析A（卓越1601）实验一 Euclid’s Game 翻煎饼 Locker doors The Josephus Problem Binary search">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/22/算法分析/"/>
+
+
+
+
+
+  <title>算法分析 | cici的blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cici的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/算法分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cici">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cici的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T15:27:27+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>SWUST OJ  算法分析A（卓越1601）实验一</p>
+<p>Euclid’s Game</p>
+<p>翻煎饼</p>
+<p>Locker doors</p>
+<p>The Josephus Problem</p>
+<p>Binary search</p>
+<a id="more"></a>
+<h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><h2 id="Euclid’s-Game"><a href="#Euclid’s-Game" class="headerlink" title="Euclid’s Game"></a>Euclid’s Game</h2><p>Starts with two unequal positive numbers (M,N and M&gt;N) on the board. Two players move in turn. On each move, a player has to write on the board a positive number equal to the difference of two numbers already on the board; this number must be new, i.e., different from all the numbers already on the board. The player who cannot move loses the game. Should you choose to move first or second in this game? </p>
+<p>According to the above rules, there are two players play tihs game. Assumptions A write a number on the board at first, then B write it. </p>
+<p>Your task is write a program to judge the winner is A or B.</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>Two unequal positive numbers M and N , M&gt;N (M&lt;1000000)</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>A or B</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>3  1</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>A</p>
+</blockquote>
+<h3 id="题目解读"><a href="#题目解读" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>翻译</strong></p>
+<p>黑板上已经有两个正数M和N（M&gt;N），两个人轮流在黑板上写数组，要求写上的数字必须是黑板上已有数字只差，而且不能重复写已经在黑板上的数字，最后一个不能写数字的人就输了。请问赢家应该先写还是后写？</p>
+<p><strong>策略</strong></p>
+<p>如果开始时，两个数字不是倍数关系，那么从M到1所有的数都可以出现，也就是黑板上总共可以出现M个数，减掉原先写在黑板上的两个数，就可以写 <strong>M-2</strong> 个数；</p>
+<p>如果开始时，两个数字是整数倍关系，那么只能出现[M-1N , M-2N, M-3N…]这些数，也就是黑板上总共可以出现M/N个数，减掉原来写在黑板上的两个数，就可以写 <strong>M/N-2</strong> 个数。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,sum;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">	<span class="keyword">if</span>(a%b==<span class="number">0</span>)</span><br><span class="line">		sum=a/b<span class="number">-2</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		sum=a<span class="number">-2</span>;</span><br><span class="line">	<span class="keyword">if</span>(sum%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"B\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"A\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="翻煎饼"><a href="#翻煎饼" class="headerlink" title="翻煎饼"></a>翻煎饼</h2><p>麦兜最喜欢的食物是煎饼，每次在街上看到煎饼摊的时候都会在那里停留几分钟。最吸引麦兜还是煎饼师傅那一手熟练的翻煎饼的技术，一堆煎饼在那里，师傅只需要用铲子翻几下，就让煎饼整齐的叠在了一起。 这天，为了庆祝麦兜被保送上研究生，他从煎饼师傅那里买回来一些煎饼请客。但是麦兜买回的煎饼大小不一，麦兜太想吃煎饼了，他想吃这些煎饼中最大的那个。麦兜还知道同学们也很喜欢煎饼，为了表示他的诚意，他想让同学们先吃，麦兜最后吃，因此，麦兜想把煎饼按照从小到大的顺序叠放在一起，大的在最下面。这样麦兜就可以在最后拿到最大的那一块煎饼了。 现在请你帮助麦兜用煎饼师傅翻煎饼的方法把麦兜买的煎饼从小到大的叠在一起。煎饼师傅的方法是用铲子插入两块煎饼之间，然后将铲子上的煎饼翻一转，这样铲子上第一个煎饼就被翻到了顶上，而原来顶上的煎饼则被翻到了刚才插入铲子的地方。麦兜希望这样翻煎饼的次数最少。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>输入包括两行，第一行是一个整数n(1&lt;=n&lt;=1000)，表示煎饼的个数，接下来的一行有n个不相同的整数，整数间用空格隔开，每个整数表示煎饼的大小（直径），左边表示顶部，右边表示底部。</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>输出为一行，翻煎饼的最少次数</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>5</p>
+<p>5 4 2 3 1</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<h3 id="题目解读-1"><a href="#题目解读-1" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>策略</strong> </p>
+<p>每次先找最大的，然后把最大的翻到上面，再整体翻一次，最大的就到最下面了。</p>
+<p>一个函数找数组中最大数对应的角标；</p>
+<p>一个函数实现翻煎饼（把num[a]到num[b]逆序排列）；</p>
+<p>一个递归函数反复找最大值和实现翻煎饼的过程。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> times=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">turn</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=a,j=b;i&lt;j;i++,j--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> t=num[i];</span><br><span class="line">		num[i]=num[j];</span><br><span class="line">		num[j]=t;</span><br><span class="line">	&#125;</span><br><span class="line">	times++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FindMax</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,max=a;</span><br><span class="line">	<span class="keyword">for</span>(i=a;i&lt;=b;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(num[i]&gt;num[max])</span><br><span class="line">			max=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> maxn=FindMax(<span class="number">0</span>,n);</span><br><span class="line">	<span class="keyword">if</span>(maxn!=<span class="number">0</span> &amp;&amp; maxn!=n)</span><br><span class="line">	&#123;</span><br><span class="line">		turn(<span class="number">0</span>,maxn);</span><br><span class="line">		turn(<span class="number">0</span>,n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(maxn==<span class="number">0</span>)</span><br><span class="line">		turn(<span class="number">0</span>,n);</span><br><span class="line">	change(n<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	change(n<span class="number">-1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,times);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Locker-doors"><a href="#Locker-doors" class="headerlink" title="Locker doors"></a>Locker doors</h2><p>There are n lockers in a hallway numbered sequentially from 1 to n. Initially, all the locker doors are closed. You make n passes by the lockers, each time starting with locker #1. On the ith pass, i = 1, 2, …, n, you toggle the door of every ith locker: if the door is closed, you open it, if it is open, you close it. For example, after the first pass every door is open; on the second pass you only toggle the even-numbered lockers (#2, #4, …) so that after the second pass the even doors are closed and the odd ones are opened; the third time through you close the door of locker #3 (opened from the first pass), open the door of locker #6 (closed from the second pass), and so on. After the last pass, which locker doors are open and which are closed? How many of them are open? Your task is write a program to output How many doors are open after the last pass? Assumptions all doors are closed at first.</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>a positive numbers n, total doors. n&lt;=100000</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>a positive numbers ，the total of doors opened after the last pass.</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>10</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>3</p>
+</blockquote>
+<h3 id="题目解读-2"><a href="#题目解读-2" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>翻译</strong></p>
+<p>假设走廊上有n把锁，标号为0~n，全部都是锁上的，现在你经过走廊n次，第一次把1的倍数（1,2,3…）的锁打开，第二次把2的倍数（2,4,6…）的锁打开，如果已经打开了就关上，第三次对3的倍数的锁进行类似的操作。请问最后有几把锁是开着的？</p>
+<p><strong>策略</strong></p>
+<p>直白的来看，就是从1到n，求每个数的公因数的个数（比如数字6，有1,2,3,6四个公因数，经过4次操作后就是关闭的状态），但是如果循环求n次公因数的个数，就会超时……</p>
+<p>换个角度想一想，什么样的数会有奇数个公因子呢？只有遇到1x1, 2x2, 3x3，…  才会出现奇数个公因子，所以只需要求$\sqrt{n}$的整数部分就可以啦！</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="The-Josephus-Problem"><a href="#The-Josephus-Problem" class="headerlink" title="The Josephus Problem"></a>The Josephus Problem</h2><p>The problem is named after Flavius Josephus, a Jewish historian who participated in and chronicled the Jewish revolt of 66-70C.E. against the Romans. Josephus, as a general, managed to hold the fortress of Jotapata for 47days, but after the fall of the city he took refuge with 40 diehards in a nearby cave. There the rebels voted to perish rather than surrender. Josephus proposed that each man in turn should dispatch his neighbor, the order to be determined by casting lots. Josephus contrived to draw the last lot, and as one of the two surviving men in the cave, he prevailed upon his intended victim to surrender to the Romans. Your task:computint the position of the survivor when there are initially n people.</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>a Positive Integer n is initially people. n&lt; = 50000</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>the position of the survivor</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>6</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>5</p>
+</blockquote>
+<h3 id="题目解读-3"><a href="#题目解读-3" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>翻译</strong></p>
+<p>n个人围成一圈报数，报到2的人就会死掉，然后下一个人再接着从1开始报数，直到最后剩下一个人活着，请问最开始应该在几号位才能活到最后？</p>
+<p><strong>策略</strong></p>
+<p>一种方法就是模拟，定义一个数组，从1到n全部置为1，对应编号的人死掉就置为0，用另一个数组表示当前报数的数字，等于2时，就从头再来。</p>
+<p>还有一种公式法，循环取模。</p>
+<p><strong>代码</strong></p>
+<p><strong>模拟法</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> s=<span class="number">0</span>,t=<span class="number">0</span>,count=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">50005</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		t++;</span><br><span class="line">		<span class="keyword">if</span>(t&gt;n)</span><br><span class="line">			t=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[t]==<span class="number">0</span>)</span><br><span class="line">			s++;</span><br><span class="line">		<span class="keyword">if</span>(s==<span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			s=<span class="number">0</span>;</span><br><span class="line">			count++;</span><br><span class="line">			a[t]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(count==n<span class="number">-1</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>公式法</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">josephus</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum=(sum+m)%i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> ans=josephus(n,<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a>Binary search</h2><p>A binary search algorithm (or binary chop) is a technique for finding a particular value in a sorted list. It makes progressively better guesses, and closes in on the sought value, by comparing an element halfway with what has been determined to be an element too low in the list and one too high in the list. A binary search finds the median element in a list, compares its value to the one you are searching for, and determines if it’s greater than, less than, or equal to the one you want. A guess that turns out to be too high becomes the new top of the list, and one too low the new bottom of the list. The binary search’s next guess is halfway between the new list’s top and bottom. Pursuing this strategy iteratively, it narrows the search by a factor 2 each time, and finds your value. A binary search is an example of a divide and conquer algorithm (more specifically a decrease and conquer algorithm) and a dichotomic search (more at Search algorithm). The most common application of binary search is to find a specific value in a sorted list. To cast this in the frame of the guessing game (see Example below), realize that we are now guessing the index, or numbered place, of the value in the list. This is useful because, given the index, other data structures will contain associated information. Suppose a data structure containing the classic collection of name, address, telephone number and so forth has been accumulated, and an array is prepared containing the names, numbered from one to N. A query might be: what is the telephone number for a given name X. To answer this the array would be searched and the index (if any) corresponding to that name determined, whereupon it would be used to report the associated telephone number and so forth. Appropriate provision must be made for the name not being in the list (typically by returning an index value of zero), indeed the question of interest might be only whether X is in the list or not. If the list of names is in sorted order, a binary search will find a given name with far fewer probes than the simple procedure of probing each name in the list, one after the other in a linear search, and the procedure is much simpler than organising a hash table though that would be faster still, typically averaging just over one probe. This applies for a uniform distribution of search items but if it is known that some few items are much more likely to be sought for than the majority then a linear search with the list ordered so that the most popular items are first may do better. The binary search begins by comparing the sought value X to the value in the middle of the list; because the values are sorted, it is clear whether the sought value would belong before or after that middle value, and the search then continues through the correct half in the same way. Only the sign of the difference is inspected: there is no attempt at an interpolation search based on the size of the differences. Your task is to write a program that, given a set numbers of ascending and a key, finding a particular postion in a sorted list.</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>The input contains one total numbers（N&lt;=5000000） and a find key,followed by a line containing the integer numbers ascending sets. </p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>if find the key in the sorted list, output containing postion in a sorted list, else ouput -1.</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>10 7</p>
+<p>0 1 2 3 4 5 6 7 8 9</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>8</p>
+</blockquote>
+<h3 id="题目解读-4"><a href="#题目解读-4" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>翻译</strong></p>
+<p>二分搜索（折半查找）：是一种在有序数组中查找某一特定元素的搜索算法。搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。</p>
+<p><strong>特别注意</strong></p>
+<p>数组要开到5000005，写在函数外面，用iostream，c++提交。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">5000005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binary</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> first=<span class="number">0</span>,last=n,mid;</span><br><span class="line">	<span class="keyword">while</span>(first&lt;=last)</span><br><span class="line">	&#123;</span><br><span class="line">		mid=(first+last)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(num[mid]&gt;key)</span><br><span class="line">			last=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">if</span>(num[mid]&lt;key)</span><br><span class="line">			first=mid+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(num[mid]==key)</span><br><span class="line">			<span class="keyword">return</span> mid+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,key;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;key);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=binary(n<span class="number">-1</span>,key);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法分析/" rel="tag"># 算法分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/18/TF在MNIST中的应用/" rel="next" title="TF在MNIST中的应用">
+                <i class="fa fa-chevron-left"></i> TF在MNIST中的应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.JPG"
+                alt="cici" />
+            
+              <p class="site-author-name" itemprop="name">cici</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验一"><span class="nav-number">1.</span> <span class="nav-text">实验一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Euclid’s-Game"><span class="nav-number">1.1.</span> <span class="nav-text">Euclid’s Game</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读"><span class="nav-number">1.1.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#翻煎饼"><span class="nav-number">1.2.</span> <span class="nav-text">翻煎饼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Locker-doors"><span class="nav-number">1.3.</span> <span class="nav-text">Locker doors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Josephus-Problem"><span class="nav-number">1.4.</span> <span class="nav-text">The Josephus Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-search"><span class="nav-number">1.5.</span> <span class="nav-text">Binary search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cici</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
