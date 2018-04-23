@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon (2).ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="SWUST OJ 算法分析A（卓越软件1601）实验二">
+<meta name="keywords" content="算法分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析实验二">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/算法分析实验二/index.html">
+<meta property="og:site_name" content="cici的blog">
+<meta property="og:description" content="SWUST OJ 算法分析A（卓越软件1601）实验二">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-23T07:12:29.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法分析实验二">
+<meta name="twitter:description" content="SWUST OJ 算法分析A（卓越软件1601）实验二">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/算法分析实验二/"/>
+
+
+
+
+
+  <title>算法分析实验二 | cici的blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cici的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/算法分析实验二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cici">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cici的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法分析实验二</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T15:12:29+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>SWUST OJ 算法分析A（卓越软件1601）实验二</p>
+<a id="more"></a>
+<h1 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h1><h2 id="凸包面积"><a href="#凸包面积" class="headerlink" title="凸包面积"></a>凸包面积</h2><p>麦兜是个淘气的孩子。一天，他在玩钢笔的时候把墨水洒在了白色的墙上。再过一会，麦兜妈就要回来了，麦兜为了不让妈妈知道这件事情，就想用一个白色的凸多边形把墙上的墨点盖住。你能告诉麦兜最小需要面积多大的凸多边形才能把这些墨点盖住吗？ 现在，给出了这些墨点的坐标，请帮助麦兜计算出覆盖这些墨点的最小凸多边形的面积。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>多组测试数据。第一行是一个整数T，表明一共有T组测试数据。每组测试数据的第一行是一个正整数N(0&lt; N &lt; = 105)，表明了墨点的数量。接下来的N行每行包含了两个整数Xi和Yi（0&lt;=Xi,Yi&lt;=2000），表示每个墨点的坐标。每行的坐标间可能包含多个空格。</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>每行输出一组测试数据的结果，只需输出最小凸多边形的面积。面积是个实数，小数点后面保留一位即可，不需要多余的空格。</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>2</p>
+<p>4</p>
+<p>0 0</p>
+<p>1 0</p>
+<p>0 1</p>
+<p>1 1</p>
+<p>2</p>
+<p>0 0</p>
+<p>0 1</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>1.0</p>
+<p>0.0</p>
+</blockquote>
+<h3 id="题目解读"><a href="#题目解读" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t,n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,y; </span><br><span class="line">&#125;data[<span class="number">110</span>],point[<span class="number">110</span>],basic;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">direction</span><span class="params">(node pi,node pj,node pk)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (pj.x-pi.x)*(pk.y-pi.y)-(pj.y-pi.y)*(pk.x-pi.x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dis</span><span class="params">(node a,node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(node pj,node pk)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k=direction(basic,pj,pk);</span><br><span class="line">    <span class="keyword">if</span>(k==<span class="number">0</span>) <span class="keyword">return</span>(dis(basic,pj)&gt;dis(basic,pk));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> k&gt;<span class="number">0</span>?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n; <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;data[i].x&gt;&gt;data[i].y;</span><br><span class="line">            <span class="keyword">if</span>(data[i].y&lt;data[flag].y||(data[i].y==data[flag].y&amp;&amp;data[i].x&lt;data[flag].x))</span><br><span class="line">            flag=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;<span class="number">3</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"0.0\n"</span>; <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        node zz=data[<span class="number">0</span>]; data[<span class="number">0</span>]=data[flag]; data[flag]=zz;</span><br><span class="line">        basic=data[<span class="number">0</span>];</span><br><span class="line">        sort(data+<span class="number">1</span>,data+n,cmp);</span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">0</span>;</span><br><span class="line">        point[top++]=data[<span class="number">0</span>];</span><br><span class="line">        point[top++]=data[<span class="number">1</span>];</span><br><span class="line">        point[top++]=data[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(direction(point[top<span class="number">-2</span>],point[top<span class="number">-1</span>],data[i])&lt;<span class="number">0</span>)</span><br><span class="line">            top--;</span><br><span class="line">            point[top++]=data[i]; </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;top<span class="number">-1</span>;i++)</span><br><span class="line">        sum+=<span class="built_in">abs</span>(direction(point[<span class="number">0</span>],point[i],point[i+<span class="number">1</span>]));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.1lf\n"</span>,sum/<span class="number">2</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="变位词"><a href="#变位词" class="headerlink" title="变位词"></a>变位词</h2><p>如果两个单词的组成字母完全相同，只是字母的排列顺序不一样，则它们就是变位词，两个单词相同也被认为是变位词。如tea 与eat , nic 与cin, ddc与dcd, abc与abc 等。你的任务就是判断它们是否是变位词。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>第一行一个N,表示下面有N行测试数据。每行测试数据包括两个单词，如tea eat ,它们之间用空格割开</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>对于每个测试数据，如果它们是变位词，输出Yes,否则输出No.</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>3</p>
+<p>tea eat</p>
+<p>ddc cdd</p>
+<p>dee dde</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>Yes</p>
+<p>Yes</p>
+<p>No</p>
+</blockquote>
+<h3 id="题目解读-1"><a href="#题目解读-1" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>策略</strong></p>
+<p>对于两个给定字符串，先预排序，排序之后比较是否完全一样，如果完全一样就是变位词，否则不是变位词。</p>
+<p><strong>代码</strong> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">105</span>],b[<span class="number">105</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">while</span>(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		<span class="keyword">int</span> len1=<span class="built_in">strlen</span>(a);</span><br><span class="line">		<span class="keyword">int</span> len2=<span class="built_in">strlen</span>(b);</span><br><span class="line">		sort(a,a+len1);</span><br><span class="line">		sort(b,b+len2);</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">strcmp</span>(a,b)==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h2><p>Quicksort is a well-known sorting algorithm developed by C. A. R. Hoare that, on average, makes Θ(n log n) comparisons to sort n items. However, in the worst case, it makes Θ(n2) comparisons. Typically, quicksort is significantly faster in practice than other Θ(n log n) algorithms, because its inner loop can be efficiently implemented on most architectures, and in most real-world data it is possible to make design choices which minimize the possibility of requiring quadratic time. Quicksort sorts by employing a divide and conquer strategy to divide a list into two sub-lists. The steps are: 1. Pick an element, called a pivot, from the list. 2. Reorder the list so that all elements which are less than the pivot come before the pivot and so that all elements greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation. 3. Recursively sort the sub-list of lesser elements and the sub-list of greater elements. The base case of the recursion are lists of size zero or one, which are always sorted. The algorithm always terminates because it puts at least one element in its final place on each iteration (the loop invariant). Quicksort in action on a list of random numbers. The horizontal lines are pivot values. Write a program to sort ascending int number by QuickSort ,n less than 50000.</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>two lows, the first low is numbers , less and equal than 50000. the second low is a set integer numbers</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>a set integer numbers of sort ascending</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>10</p>
+<p>4 2 1 5 7 6 9 8 0 3</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>0 1 2 3 4 5 6 7 8 9</p>
+</blockquote>
+<h3 id="题目解读-2"><a href="#题目解读-2" class="headerlink" title="题目解读"></a>题目解读</h3><p>快排算法</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">50005</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PostOffice"><a href="#PostOffice" class="headerlink" title="PostOffice"></a>PostOffice</h2><p>在一个按照东西和南北方向划分成规整街区的城市里，n个居民点散乱地分布在不同的街区中。用x 坐标表示东西向，用y坐标表示南北向。各居民点的位置可以由坐标(x,y)表示。 　　</p>
+<p>街区中任意2 点(x1,y1)和(x2,y2)之间的距离可以用数值|x1-x2|+|y1-y2|度量。 居民们希望在城市中选择建立邮局的最佳位置，使n个居民点到邮局的距离总和最小。 　　</p>
+<p>任务：给定n 个居民点的位置,编程计算n 个居民点到邮局的距离总和的最小值。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>第1 行是居民点数n，1 &lt; = n &lt; =10000。接下来n 行是居民点的位置，每行2 个整数x 和y，-10000 &lt; =x，y &lt; =10000。</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>n 个居民点到邮局的距离总和的最小值。</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>5</p>
+<p>1 2</p>
+<p>2 2</p>
+<p>1 3</p>
+<p>3 -2</p>
+<p>3 3</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>10</p>
+</blockquote>
+<h3 id="题目解读-3"><a href="#题目解读-3" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>策略</strong></p>
+<p>蛮力法。循环比较每两个点之间的距离。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,midx,midy;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> x[<span class="number">10005</span>],y[<span class="number">10005</span>];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;x[i],&amp;y[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	sort(x,x+n);</span><br><span class="line">	sort(y,y+n);</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		midx=(x[n/<span class="number">2</span>]+x[n/<span class="number">2</span><span class="number">-1</span>])/<span class="number">2</span>;</span><br><span class="line">		midy=(y[n/<span class="number">2</span>]+y[n/<span class="number">2</span><span class="number">-1</span>])/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n%<span class="number">2</span>!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		midx=x[n/<span class="number">2</span>];</span><br><span class="line">		midy=y[n/<span class="number">2</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> dis=<span class="built_in">abs</span>(x[i]-midx)+<span class="built_in">abs</span>(y[i]-midy);</span><br><span class="line">		sum+=dis;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="俄式乘法"><a href="#俄式乘法" class="headerlink" title="俄式乘法"></a>俄式乘法</h2><p>俄式乘法，又被称为俄国农夫法，它是对两个正整数相乘的非主流算法。假设m和n是两个正整数，我们要计算它们的积。它的主要原理如下： if n is 偶数 n <em> m=n/2 </em> 2m else n <em> m=(n-1)/2 </em> 2m + m 该算法只包括折半，加倍，相加等几个简单操作，因此实现速度非常快。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>两个正整数 n,m。</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>n和m的乘积。</p>
+<p>输出整个求和表达式，运算符与数字之间用一个空格隔开。</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>50 65</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>130 + 1040 + 2080 = 3250</p>
+</blockquote>
+<h3 id="题目解读-4"><a href="#题目解读-4" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,i,k=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">while</span>(n&gt;<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			n=n/<span class="number">2</span>;</span><br><span class="line">			m=m*<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			n=(n<span class="number">-1</span>)/<span class="number">2</span>;</span><br><span class="line">			m=<span class="number">2</span>*m;</span><br><span class="line">			a[k]=m/<span class="number">2</span>;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,a[i]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" + "</span>);</span><br><span class="line">		sum+=a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,m);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">" = "</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum+m);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最近对问题"><a href="#最近对问题" class="headerlink" title="最近对问题"></a>最近对问题</h2><p>设p1=(x1, y1), p2=(x2, y2), …, pn=(xn, yn)是平面上n个点构成的集合S，设计算法找出集合S中距离最近的点对。</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>多组测试数据，第一行为测试数据组数n（0&lt;n≤100），每组测试数据由两个部分构成，第一部分为一个点的个数m（0&lt;m≤1000），紧接着是m行，每行为一个点的坐标x和y，用空格隔开，（0&lt;x，y≤100000）</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>每组测试数据输出一行，为该组数据最近点的距离，保留4为小数。</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>2</p>
+<p>2</p>
+<p>0 0</p>
+<p>0 1</p>
+<p>3</p>
+<p>0 0</p>
+<p>1 1</p>
+<p>1 0</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>1.0000</p>
+<p>1.0000</p>
+</blockquote>
+<h3 id="题目解读-5"><a href="#题目解读-5" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>策略</strong></p>
+<p>蛮力法。循环比较。</p>
+<p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">while</span>(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> m,i,j,k;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">		<span class="keyword">int</span> x[<span class="number">1005</span>],y[<span class="number">1005</span>];</span><br><span class="line">		<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;m;k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;x[k],&amp;y[k]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">double</span> min=<span class="number">10000</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;m;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">double</span> a=(x[j]-x[i])*(x[j]-x[i]);</span><br><span class="line">				<span class="keyword">double</span> b=(y[j]-y[i])*(y[j]-y[i]);</span><br><span class="line">				<span class="keyword">double</span> dis=<span class="built_in">sqrt</span>(a+b);</span><br><span class="line">				<span class="keyword">if</span>(dis&lt;min)</span><br><span class="line">					min=dis;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.4lf\n"</span>,min);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="约瑟夫问题的实现"><a href="#约瑟夫问题的实现" class="headerlink" title="约瑟夫问题的实现"></a>约瑟夫问题的实现</h2><p>n个人围成一个圈，每个人分别标注为1、2、…、n，要求从1号从1开始报数，报到k的人出圈，接着下一个人又从1开始报数，如此循环，直到只剩最后一个人时，该人即为胜利者。例如当n=10,k=4时，依次出列的人分别为4、8、2、7、3、10，9、1、6、5，则5号位置的人为胜利者。给定n个人，请你编程计算出最后胜利者标号数。（要求用单循环链表完成。）</p>
+<p><strong>输入</strong></p>
+<blockquote>
+<p>第一行为人数n;</p>
+<p>第二行为报数k。</p>
+</blockquote>
+<p><strong>输出</strong></p>
+<blockquote>
+<p>输出最后胜利者的标号数。</p>
+</blockquote>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>10 4</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>5</p>
+</blockquote>
+<h3 id="题目解读-6"><a href="#题目解读-6" class="headerlink" title="题目解读"></a>题目解读</h3><p><strong>代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">josephus</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum=(sum+m)%i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">	<span class="keyword">int</span> ans=josephus(n,k);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法分析/" rel="tag"># 算法分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/22/算法分析实验一/" rel="next" title="算法分析实验一">
+                <i class="fa fa-chevron-left"></i> 算法分析实验一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.JPG"
+                alt="cici" />
+            
+              <p class="site-author-name" itemprop="name">cici</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验二"><span class="nav-number">1.</span> <span class="nav-text">实验二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#凸包面积"><span class="nav-number">1.1.</span> <span class="nav-text">凸包面积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读"><span class="nav-number">1.1.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变位词"><span class="nav-number">1.2.</span> <span class="nav-text">变位词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">1.3.</span> <span class="nav-text">Quick Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PostOffice"><span class="nav-number">1.4.</span> <span class="nav-text">PostOffice</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#俄式乘法"><span class="nav-number">1.5.</span> <span class="nav-text">俄式乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最近对问题"><span class="nav-number">1.6.</span> <span class="nav-text">最近对问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-5"><span class="nav-number">1.6.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约瑟夫问题的实现"><span class="nav-number">1.7.</span> <span class="nav-text">约瑟夫问题的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解读-6"><span class="nav-number">1.7.1.</span> <span class="nav-text">题目解读</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cici</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
