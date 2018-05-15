@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7cffeb;
+  background: #e9ffa6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2904,6 +2904,9 @@ hr {
     text-align: center;
   }
 }
+body {
+  background: url("/images/white_texture.png");
+}
 a#download {
   display: inline-block;
   padding: 0 10px;
@@ -2990,9 +2993,12 @@ p#div-border-left-yellow {
   border-left-color: #f0ad4e;
 }
 p#div-border-left-green {
+  display: block;
+  padding: 10px;
   border-style: none none none solid;
   border-left-width: 5px;
-  border-left-color: #096;
+  border-left-color: #197703;
+  background-color: #e9f2e7;
 }
 p#div-border-left-blue {
   display: block;
@@ -3000,6 +3006,7 @@ p#div-border-left-blue {
   border-style: none none none solid;
   border-left-width: 5px;
   border-left-color: #39f;
+  background-color: #e8f4f7;
 }
 p#div-border-left-purple {
   display: block;
