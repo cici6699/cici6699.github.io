@@ -112,18 +112,20 @@
 
 
 
-<meta name="description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需">
+<meta name="description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下">
 <meta name="keywords" content="算法分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划（上）">
 <meta property="og:url" content="http://yoursite.com/2018/05/19/动态规划（上）/index.html">
 <meta property="og:site_name" content="cici的blog">
-<meta property="og:description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需">
+<meta property="og:description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T02:56:46.111Z">
+<meta property="og:image" content="http://i4.bvimg.com/646488/2691f244f0a76811.jpg">
+<meta property="og:updated_time" content="2018-05-20T05:12:00.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划（上）">
-<meta name="twitter:description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需">
+<meta name="twitter:description" content="动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。 动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。 通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下">
+<meta name="twitter:image" content="http://i4.bvimg.com/646488/2691f244f0a76811.jpg">
 
 
 
@@ -343,7 +345,9 @@
       
 
       
-        <h1 id="动态规划（上）"><a href="#动态规划（上）" class="headerlink" title="动态规划（上）"></a>动态规划（上）</h1><p><strong>动态规划</strong>（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。</p>
+        <p><img src="http://i4.bvimg.com/646488/2691f244f0a76811.jpg" alt="Markdown"></p>
+<!--read more-->
+<h1 id="动态规划（上）"><a href="#动态规划（上）" class="headerlink" title="动态规划（上）"></a>动态规划（上）</h1><p><strong>动态规划</strong>（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。</p>
 <p>动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。</p>
 <p>通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。</p>
 <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>斐波那契数列可以以递归的方式来定义：</p>

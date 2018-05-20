@@ -344,19 +344,69 @@
       
 
       
+		
         
           
-          动态规划（上）动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。
-动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。
-通常许多子问题非常相似，为此动态规划法试图
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/19/动态规划（上）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><img src="http://i4.bvimg.com/646488/2691f244f0a76811.jpg" alt="Markdown"></p>
+<!--read more-->
+<h1 id="动态规划（上）"><a href="#动态规划（上）" class="headerlink" title="动态规划（上）"></a>动态规划（上）</h1><p><strong>动态规划</strong>（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。</p>
+<p>动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。</p>
+<p>通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。</p>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>斐波那契数列可以以递归的方式来定义：</p>
+<ul>
+<li>F~0~ = 0</li>
+<li>F~1~ = 1</li>
+<li>F~n~ = F~n-1~ + F~n-2~ （n&gt;=2)</li>
+</ul>
+<p>用文字来说，就是斐波那契数列由0和1开始，之后的数就是前面连个数之和：0,1,1,2,3,5,8,13……</p>
+<p>求解斐波那契数列时，可以直接使用递归的定义方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span> || n==<span class="number">1</span>)	<span class="keyword">return</span> n;</span><br><span class="line">  <span class="keyword">return</span> fib(n<span class="number">-1</span>)+fib(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的定义方式便于理解，但是有一个问题：对于相似的子问题进行了大量重复的计算，例如在求fib(5)时，经历了这样的步骤：</p>
+<ol>
+<li>fib(5)</li>
+<li>fib(4) + fib(3)</li>
+<li>( fib(3) + fib(2) ) + ( fib(2) + fib(1) )</li>
+<li>[ ( fib(2) + fib(1) ) + ( fib(1) + fib(0) ) ] + [ ( fib(1) + fib(0) ) + fib(1) ]</li>
+<li>[ ( ( fib(1) + fib(0) ) + fib(1) ) + ( fib(1) + fib(0) ) ] + [ ( fib(1) + fib(0) ) + fib(1) ]</li>
+</ol>
+<p>由这个过程可以看出，这样递归的方法会重复计算多次fib(2)、fib(3)，因此效率很低，如果将前n个已经计算出来了的 fib(i) 存在一个数组中，这样在后面的计算中，就可以直接调用数组中存储的值，而避免了重复计算。这种思想就是动态规划的思想。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dp[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>)	dp[n]=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">1</span>)	dp[n]=<span class="number">1</span>;</span><br><span class="line">  dp[n]=dp[n<span class="number">-1</span>]+dp[n<span class="number">-2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="收集硬币问题"><a href="#收集硬币问题" class="headerlink" title="收集硬币问题"></a>收集硬币问题</h2><p>有一串数字，现在需要取出一些数组，取数规则就是不能选两个相邻的数。现在需要计算在这种规则下，能取到的数字之和最大是多少。 例如以下这一串数字：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">num</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>现在定义一个数组dp[ ],dp[i]代表选择到第i个硬币时，能得到的最大金额数。</p>
+<p>以dp[5]为例，此时有两种选择：</p>
+<ul>
+<li>选5号（那就不能选4号）：dp[3]+num[5]</li>
+<li>不选5号（就可以选4号）：dp[4]</li>
+</ul>
+<p>这样就可以推导出状态方程：<br>$$<br>\begin{cases}<br>dp[i] = max( dp[i-2] + num[i] , dp[i-1] )<br>\dp[0] = num[0]<br>\dp[1] = max( num[0], num[1] )<br>\end{cases}<br>$$<br>这样就可以敲代码了，如果使用递归的方法，会产生很多重叠子问题，运算速度慢，效率为O(n^2^)。所以不使用递归方法，而是建立一个dp数组，然后循环填表，一次把dp[0],dp[1],dp[2]……的值计算出来，最后最优解即是dp[n-1]。</p>
+<p><strong>代码</strong> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(a,b) ((a&gt;b)?a:b)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">10000</span>],dp[<span class="number">10000</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;num[i];</span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>]=num[<span class="number">0</span>];</span><br><span class="line">	dp[<span class="number">1</span>]=max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i]=max(dp[i<span class="number">-2</span>]+num[i],dp[i<span class="number">-1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\r\n"</span>,dp[n<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -474,8 +524,11 @@
       
 
       
+		
         
           <p>利用OpenCV和python环境实现简单的人脸识别应用：识别人脸并框处人脸、检测并框处人的眼睛、检测笑脸、并框处笑脸。</p>
+		  
+		  
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/08/opencv-python人脸识别应用/#more" rel="contents">
@@ -600,8 +653,11 @@
       
 
       
+		
         
           <p>SWUST OJ 算法分析A（卓越软件1601）实验三</p>
+		  
+		  
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/04/算法分析实验三/#more" rel="contents">
@@ -726,23 +782,30 @@
       
 
       
+		
         
           
-          Scikit learn模块
-Scikit learn 也简称 sklearn, 是机器学习领域当中最知名的 python 模块之一。
-Sklearn 包含了很多种机器学习的方式:
+            <h1 id="Scikit-learn模块"><a href="#Scikit-learn模块" class="headerlink" title="Scikit learn模块"></a>Scikit learn模块</h1><p><img src="https://i.loli.net/2018/05/20/5b00f8cdb8f49.png" alt="sklearn.png"></p>
+<p>Scikit learn 也简称 sklearn, 是机器学习领域当中最知名的 python 模块之一。</p>
+<p>Sklearn 包含了很多种机器学习的方式:</p>
+<ul>
+<li>Classification 分类（监督学习）</li>
+<li>Regression 线性回归（监督学习）</li>
+<li>Clustering 非监督分类</li>
+<li>Dimensionality reduction 数据降维</li>
+<li>Model Selection 模型选择</li>
+<li>Preprocessing 数据预处理</li>
+</ul>
+<p><strong>在股票、房价预测中可以使用线性回归。</strong></p>
+<p><img src="https://i.loli.net/2018/05/01/5ae85bbc1a959.png" alt="sklearn的流程图"></p>
+<p>其中蓝色圆圈内是判断条件，绿色方框内是可以选择的算法</p>
+<h1 id="sklearn-的使用"><a href="#sklearn-的使用" class="headerlink" title="sklearn 的使用"></a>sklearn 的使用</h1><h2 id="正则化输入"><a href="#正则化输入" class="headerlink" title="正则化输入"></a>正则化输入</h2><p><strong>正则化含义解释</strong> ：</p>
+<p>如果输入特征属于不同范围内，可能有些特征值从0到1，有些特征值从1到1000，那么归一化（normalize）特征值就非常重要了。</p>
+<p>具体参考吴恩达课程<a href="http://mooc.study.163.com/learn/2001281003?tid=2001391036#/learn/content?type=detail&amp;id=2001701046" target="_blank" rel="noopener">http://mooc.study.163.com/learn/2001281003?tid=2001391036#/learn/content?type=detail&amp;id=2001701046</a></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将收盘数据正则化，全部化为-1到1之间的数</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing <span class="comment">#标准化数据模块</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span><span class="params">()</span>:</span></span><br><span class="line">	data = pd.read_csv(<span class="string">"new_day_close.csv"</span>)</span><br><span class="line">	data = data.iloc[:,<span class="number">1</span>:]</span><br><span class="line">	normalized = preprocessing.scale(data)</span><br><span class="line">	print(normalized)</span><br></pre></td></tr></table></figure>
+<h2 id="SVR——Support-Vector-Regression"><a href="#SVR——Support-Vector-Regression" class="headerlink" title="SVR——Support Vector Regression"></a>SVR——Support Vector Regression</h2><h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><h3 id="K-CV方法"><a href="#K-CV方法" class="headerlink" title="K-CV方法"></a>K-CV方法</h3><p>将原始数据分成K组(一般是均分),将每个子集数据分别做一次验证集,其余的K-1组子集数据作为训练集,这样会得到K个模型,用这K个模型最终的验证集的分类准确率的平均数作为此K-CV下分类器的性能指标.K一般大于等于2,实际操作时一般从3开始取,只有在原始数据集合数据量小的时候才会尝试取2.K-CV可以有效的避免过学习以及欠学习状态的发生,最后得到的结果也比较具有说服性。</p>
 
-Classification 分类（监督学习）
-Regression 线性回归（监督学习）
-Clustering 非
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/28/机器学习之sklearn/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -860,8 +923,11 @@ Clustering 非
       
 
       
+		
         
           <p>SWUST OJ 算法分析A（卓越软件1601）实验二</p>
+		  
+		  
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/23/算法分析实验二/#more" rel="contents">
@@ -986,9 +1052,12 @@ Clustering 非
       
 
       
+		
         
           <hr>
 <p>SWUST OJ  算法分析A（卓越软件1601）实验一</p>
+		  
+		  
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/22/算法分析实验一/#more" rel="contents">
@@ -1113,17 +1182,12 @@ Clustering 非
       
 
       
+		
         
           
-          TensorFlow在MNIST中的应用MNIST数据集简介常用的函数API r1.5tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=prediction, labels=y))tf.train.GradientDes
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/18/TF在MNIST中的应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="TensorFlow在MNIST中的应用"><a href="#TensorFlow在MNIST中的应用" class="headerlink" title="TensorFlow在MNIST中的应用"></a>TensorFlow在MNIST中的应用</h1><h2 id="MNIST数据集简介"><a href="#MNIST数据集简介" class="headerlink" title="MNIST数据集简介"></a>MNIST数据集简介</h2><h2 id="常用的函数API-r1-5"><a href="#常用的函数API-r1-5" class="headerlink" title="常用的函数API r1.5"></a>常用的函数API r1.5</h2><p>tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=prediction, labels=y))<br>tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)<br>tf.layers.conv2d(x_image, 32, 5, 1, ‘same’, activation=tf.nn.relu)<br>tf.layers.max_pooling2d(conv1, 2, 2)<br>tf.layers.dense(flat,10)<br>tf.layers.dropout(output)</p>
+
+          
         
       
     </div>
