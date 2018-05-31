@@ -112,20 +112,20 @@
 
 
 
-<meta name="description" content="动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。">
+<meta name="description" content="第五章的学习笔记">
 <meta name="keywords" content="算法分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态规划（上）">
-<meta property="og:url" content="http://yoursite.com/2018/05/19/动态规划（上）/index.html">
+<meta property="og:title" content="《算法图解》学习笔记5">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/《算法图解》学习笔记5/index.html">
 <meta property="og:site_name" content="cici的blog">
-<meta property="og:description" content="动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。">
+<meta property="og:description" content="第五章的学习笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/摘要配图/Brussels,%20Belgium.jpg">
-<meta property="og:updated_time" content="2018-05-21T00:14:36.689Z">
+<meta property="og:image" content="http://yoursite.com/images/摘要配图/算法图解.jpg">
+<meta property="og:updated_time" content="2018-05-31T14:58:55.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动态规划（上）">
-<meta name="twitter:description" content="动态规划（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。">
-<meta name="twitter:image" content="http://yoursite.com/images/摘要配图/Brussels,%20Belgium.jpg">
+<meta name="twitter:title" content="《算法图解》学习笔记5">
+<meta name="twitter:description" content="第五章的学习笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/摘要配图/算法图解.jpg">
 
 
 
@@ -159,7 +159,7 @@
 
 
 
-  <title>动态规划（上） | cici的blog</title>
+  <title>《算法图解》学习笔记5 | cici的blog</title>
   
 
 
@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/动态规划（上）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/《算法图解》学习笔记5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cici">
@@ -315,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">动态规划（上）</h1>
+          <h1 class="post-title" itemprop="name headline">《算法图解》学习笔记5</h1>
         
 
         <div class="post-meta">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T09:46:21+08:00">
-                2018-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T22:20:09+08:00">
+                2018-05-31
               </time>
             
 
@@ -350,7 +350,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法分析/" itemprop="url" rel="index">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/算法分析/" itemprop="url" rel="index">
                     <span itemprop="name">算法分析</span>
                   </a>
                 </span>
@@ -387,65 +398,24 @@
       
 
       
-        <p><img src="/images/摘要配图/Brussels, Belgium.jpg" width="600" height="300" alt="git" align="center"> </p>
-<p><strong>动态规划</strong>（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。</p>
+        <p><img src="/images/摘要配图/算法图解.jpg" width="600" height="300" alt="git" align="center"></p>
+<p>第五章的学习笔记</p>
 <a id="more"></a>
-<h1 id="动态规划（上）"><a href="#动态规划（上）" class="headerlink" title="动态规划（上）"></a>动态规划（上）</h1><p><strong>动态规划</strong>（英语：Dynamic programming，简称DP） 常常适用于有重叠子问题 和最优子性质的问题。</p>
-<p>动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。</p>
-<p>通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。</p>
-<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p>斐波那契数列可以以递归的方式来定义：</p>
+<h1 id="第五章-散列表"><a href="#第五章-散列表" class="headerlink" title="第五章 散列表"></a>第五章 散列表</h1><h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p>散列表（Hash table），也叫哈希表，是根据键（key）而直接访问在内存存储位置的<em>数据结构</em>，也就是说，它通过计算一个关于键值的函数，将所需查询的数据映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做<strong>散列表</strong>。</p>
+<p>一个通俗的例子是，为了查找电话簿中某人的号码，可以创建一个按照人名首字母顺序排列的表（即建立人名 X 到首字母  F(X) 的一个函数关系，在首字母为W的表中查找“王”姓的电话号码，显然比直接查找就要快得多。这里使用人名作为关键字，“取首字母”是这个例子中散列函数的函数法则 F( )，存放首字母的表对应散列表。关键字和函数法则理论上可以任意确定。</p>
+<h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>散列函数（英文：Hash function）又称哈希函数。</p>
 <ul>
-<li>F<sub>0</sub> = 0</li>
-<li>F<sub>1</sub> = 1</li>
-<li>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub> （n&gt;=2)</li>
+<li>散列函数总是将同样的输入映射到相同的索引。</li>
+<li>散列函数只带数组有多大，只返回有效的索引。</li>
+<li>Python提供的散列表实现为字典，可以使用函数 dict 来创建散列表。</li>
 </ul>
-<p>用文字来说，就是斐波那契数列由0和1开始，之后的数就是前面连个数之和：0,1,1,2,3,5,8,13……</p>
-<p>求解斐波那契数列时，可以直接使用递归的定义方法：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span> || n==<span class="number">1</span>)	<span class="keyword">return</span> n;</span><br><span class="line">  <span class="keyword">return</span> fib(n<span class="number">-1</span>)+fib(n<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样的定义方式便于理解，但是有一个问题：对于相似的子问题进行了大量重复的计算，例如在求fib(5)时，经历了这样的步骤：</p>
-<ol>
-<li>fib(5)</li>
-<li>fib(4) + fib(3)</li>
-<li>( fib(3) + fib(2) ) + ( fib(2) + fib(1) )</li>
-<li>[ ( fib(2) + fib(1) ) + ( fib(1) + fib(0) ) ] + [ ( fib(1) + fib(0) ) + fib(1) ]</li>
-<li>[ ( ( fib(1) + fib(0) ) + fib(1) ) + ( fib(1) + fib(0) ) ] + [ ( fib(1) + fib(0) ) + fib(1) ]</li>
-</ol>
-<p>由这个过程可以看出，这样递归的方法会重复计算多次fib(2)、fib(3)，因此效率很低，如果将前n个已经计算出来了的 fib(i) 存在一个数组中，这样在后面的计算中，就可以直接调用数组中存储的值，而避免了重复计算。这种思想就是动态规划的思想。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dp[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>)	dp[n]=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">1</span>)	dp[n]=<span class="number">1</span>;</span><br><span class="line">  dp[n]=dp[n<span class="number">-1</span>]+dp[n<span class="number">-2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="收集硬币问题"><a href="#收集硬币问题" class="headerlink" title="收集硬币问题"></a>收集硬币问题</h2><p>有一串数字，现在需要取出一些数组，取数规则就是不能选两个相邻的数。现在需要计算在这种规则下，能取到的数字之和最大是多少。 例如以下这一串数字：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">0</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">3</th>
-<th style="text-align:center">4</th>
-<th style="text-align:center">5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">num</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">2</td>
-</tr>
-</tbody>
-</table>
-<p>现在定义一个数组dp[ ],dp[i]代表选择到第i个硬币时，能得到的最大金额数。</p>
-<p>以dp[5]为例，此时有两种选择：</p>
-<ul>
-<li>选5号（那就不能选4号）：dp[3]+num[5]</li>
-<li>不选5号（就可以选4号）：dp[4]</li>
+<h2 id="哈希查找"><a href="#哈希查找" class="headerlink" title="哈希查找"></a>哈希查找</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HashTable</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, size)</span>:</span></span><br><span class="line">        self.elem = [<span class="keyword">None</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(size)]  <span class="comment"># 使用list数据结构作为哈希表元素保存方法</span></span><br><span class="line">        self.count = size  <span class="comment"># 最大表长</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hash</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> key % self.count  <span class="comment"># 散列函数采用除留余数法</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert_hash</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="string">"""插入关键字到哈希表内"""</span></span><br><span class="line">        address = self.hash(key)  <span class="comment"># 求散列地址</span></span><br><span class="line">        <span class="keyword">while</span> self.elem[address]:  <span class="comment"># 当前位置已经有数据了，发生冲突。</span></span><br><span class="line">            address = (address+<span class="number">1</span>) % self.count  <span class="comment"># 线性探测下一地址是否可用</span></span><br><span class="line">        self.elem[address] = key  <span class="comment"># 没有冲突则直接保存。</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_hash</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="string">"""查找关键字，返回布尔值"""</span></span><br><span class="line">        star = address = self.hash(key)</span><br><span class="line">        <span class="keyword">while</span> self.elem[address] != key:</span><br><span class="line">            address = (address + <span class="number">1</span>) % self.count</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> self.elem[address] <span class="keyword">or</span> address == star:  <span class="comment"># 说明没找到或者循环到了开始的位置</span></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    list_a = [<span class="number">12</span>, <span class="number">67</span>, <span class="number">56</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">37</span>, <span class="number">22</span>, <span class="number">29</span>, <span class="number">15</span>, <span class="number">47</span>, <span class="number">48</span>, <span class="number">34</span>]</span><br><span class="line">    hash_table = HashTable(<span class="number">12</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list_a:</span><br><span class="line">        hash_table.insert_hash(i)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> hash_table.elem:</span><br><span class="line">        <span class="keyword">if</span> i:</span><br><span class="line">            print((i, hash_table.elem.index(i)), end=<span class="string">" "</span>)</span><br><span class="line">    print(<span class="string">"n"</span>)</span><br><span class="line"> </span><br><span class="line">    print(hash_table.search_hash(<span class="number">15</span>))</span><br><span class="line">    print(hash_table.search_hash(<span class="number">33</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>散链表常用于查找、防止重复。缓存。</li>
+<li>散链表适用于映射关系、防止重复、缓存/记住数据。</li>
+<li>冲突很糟糕，应该使用可以最大限度减小冲突的散列函数。</li>
+<li>散列表的查找、插入、删除操作速度都非常快。</li>
 </ul>
-<p>这样就可以推导出状态方程：<br>$$<br>\begin{cases}<br>dp[i] = max( dp[i-2] + num[i] , dp[i-1] )<br>\dp[0] = num[0]<br>\dp[1] = max( num[0], num[1] )<br>\end{cases}<br>$$<br>这样就可以敲代码了，如果使用递归的方法，会产生很多重叠子问题，运算速度慢，效率为O(n^2^)。所以不使用递归方法，而是建立一个dp数组，然后循环填表，一次把dp[0],dp[1],dp[2]……的值计算出来，最后最优解即是dp[n-1]。</p>
-<p><strong>代码</strong> </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(a,b) ((a&gt;b)?a:b)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">10000</span>],dp[<span class="number">10000</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;num[i];</span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>]=num[<span class="number">0</span>];</span><br><span class="line">	dp[<span class="number">1</span>]=max(num[<span class="number">0</span>],num[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i]=max(dp[i<span class="number">-2</span>]+num[i],dp[i<span class="number">-1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\r\n"</span>,dp[n<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -486,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/08/opencv-python人脸识别应用/" rel="next" title="opencv-python人脸识别应用">
-                <i class="fa fa-chevron-left"></i> opencv-python人脸识别应用
+              <a href="/2018/05/30/《算法图解》学习笔记4/" rel="next" title="《算法图解》学习笔记4">
+                <i class="fa fa-chevron-left"></i> 《算法图解》学习笔记4
               </a>
             
           </div>
@@ -495,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/22/《算法图解》学习笔记1/" rel="prev" title="《算法图解》学习笔记1">
-                《算法图解》学习笔记1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划（上）"><span class="nav-number">1.</span> <span class="nav-text">动态规划（上）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#斐波那契数列"><span class="nav-number">1.1.</span> <span class="nav-text">斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收集硬币问题"><span class="nav-number">1.2.</span> <span class="nav-text">收集硬币问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-散列表"><span class="nav-number">1.</span> <span class="nav-text">第五章 散列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#散列表"><span class="nav-number">1.1.</span> <span class="nav-text">散列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#散列函数"><span class="nav-number">1.2.</span> <span class="nav-text">散列函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希查找"><span class="nav-number">1.3.</span> <span class="nav-text">哈希查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
