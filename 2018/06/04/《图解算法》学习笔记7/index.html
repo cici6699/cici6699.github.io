@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon (2).ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="算法分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第七章的学习笔记">
+<meta name="keywords" content="算法分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《图解算法》学习笔记7">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/《图解算法》学习笔记7/index.html">
+<meta property="og:site_name" content="cici的blog">
+<meta property="og:description" content="第七章的学习笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/摘要配图/算法图解.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/06/04/5b155238034c6.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/04/5b1555e8e8a42.png">
+<meta property="og:updated_time" content="2018-06-05T03:05:51.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《图解算法》学习笔记7">
+<meta name="twitter:description" content="第七章的学习笔记">
+<meta name="twitter:image" content="http://yoursite.com/images/摘要配图/算法图解.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>《图解算法》学习笔记7 | cici的blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+	<meta name="google-site-verification" content="PQFgiRzSt8XUwZ9BicSAksi3K1rdpqMF_5_mNGCjf1k" />
+	
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cici的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/《图解算法》学习笔记7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cici">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cici的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《图解算法》学习笔记7</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T22:31:49+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/算法分析/" itemprop="url" rel="index">
+                    <span itemprop="name">算法分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/摘要配图/算法图解.jpg" width="600" height="300" alt="git" align="center"></p>
+<p>第七章的学习笔记</p>
+<a id="more"></a>
+<h1 id="第七章-Dijkstra算法"><a href="#第七章-Dijkstra算法" class="headerlink" title="第七章 Dijkstra算法"></a>第七章 Dijkstra算法</h1><h2 id="算法概述"><a href="#算法概述" class="headerlink" title="算法概述"></a>算法概述</h2><p>Dijkstra算法解决的是：在加权图中，一个点（源点）到其余各个顶点的最短路径问题，也叫做“单源最短路径”。例如下图所示的一个加权图中，从1到6有很多条路径，每一段的长度都不同，用Dijkstra算法可以选择一条长度最短的路径。</p>
+<p>注意该算法要求图中不存在负权边。</p>
+<p><img src="https://i.loli.net/2018/06/04/5b155238034c6.png" alt="dijkstra.png"></p>
+<h2 id="核心思路"><a href="#核心思路" class="headerlink" title="核心思路"></a>核心思路</h2><p>若对于顶点 s 存在能直接到达的边（s,m），则把d[m]设为w（s, m）,同时把所有其他（s不能直接到达的）顶点的路径长度设为无穷大，即表示我们不知道任何通向这些顶点的路径。当算法结束时，<em>d[v]</em> 中存储的便是从 <em>s</em> 到 <em>v</em>的最短路径，或者如果路径不存在的话是无穷大。 </p>
+<p>边的拓展是Dijkstra 算法的基础操作：如果存在一条从 <em>u</em> 到 <em>v</em> 的边，那么从 <em>s</em> 到 <em>v</em> 的最短路径可以通过将边（<em>u</em>, <em>v</em>）添加到尾部来拓展一条从 s 到 v 的路径。这条路径的长度是 d[u] + w(u, v)。如果这个值比目前已知的 <em>d[v]</em> 的值要小，我们可以用新值来替代当前 <em>d[v]</em> 中的值。拓展边的操作一直运行到所有的 d[v] 都代表从 s 到 v 的最短路径的长度值。此算法的组织令 <em>d[u]</em> 达到其最终值时，每条边（<em>u</em>, <em>v</em>）都只被拓展一次。</p>
+<p>算法维护两个顶点集合 S 和 Q。集合 S 保留所有已知最小 d[v] 值的顶点 v ，而集合 Q 则保留其他所有顶点。集合S初始状态为空，而后每一步都有一个顶点从 Q 移动到 S。这个被选择的顶点是 Q 中拥有最小的 d[u] 值的顶点。当一个顶点 u 从 Q 中转移到了 S 中，算法对 u 的每条外接边 (u, v) 进行拓展。</p>
+<h2 id="换钢琴的实例"><a href="#换钢琴的实例" class="headerlink" title="换钢琴的实例"></a>换钢琴的实例</h2><p>这是交换物品的一张图，乐谱是起点（已经有的东西），现在需要花最少的钱来还到钢琴。</p>
+<p><img src="https://i.loli.net/2018/06/04/5b1555e8e8a42.png" alt="tu.png"></p>
+<p><strong>第一步</strong>：从起点（乐谱）出发，找到最便宜的节点。</p>
+<p>这里只有两个节点，一个是唱片（权值为5），一个是海报（权值为0），所以选择海报这个节点。</p>
+<p><strong>第二步</strong>：计算前往该节点（海报）的各个邻居的开销。</p>
+<p>用一个表来记录：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父节点</th>
+<th style="text-align:center">节点</th>
+<th style="text-align:center">开销</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">吉他</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">架子鼓</td>
+<td style="text-align:center">35</td>
+</tr>
+<tr>
+<td style="text-align:center">—</td>
+<td style="text-align:center">钢琴</td>
+<td style="text-align:center">&infin;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第三步</strong>：再次执行第一步。下一个最便宜的节点为唱片。</p>
+<p><strong>第四部</strong>：再次执行第二步。计算前往该节点（唱片）的各个邻居的开销。</p>
+<p>用一个表来记录：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父节点</th>
+<th style="text-align:center">节点</th>
+<th style="text-align:center">开销</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">吉他</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">架子鼓</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:center">—</td>
+<td style="text-align:center">钢琴</td>
+<td style="text-align:center">&infin;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第五步</strong>：更新开销。</p>
+<p>发现通过唱片到吉他和通过唱片到架子鼓的开销更小。所以将架子鼓和吉他的父节点更新为唱片。</p>
+<p><strong>第六步</strong>：重复第一步。现在起点变成了唱片。下一个最便宜的节点是吉他。</p>
+<p><strong>第七步</strong>：重复第二步。计算前往该节点（吉他）的各个邻居的开销。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父节点</th>
+<th style="text-align:center">节点</th>
+<th style="text-align:center">开销</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">吉他</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">架子鼓</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:center">吉他</td>
+<td style="text-align:center">钢琴</td>
+<td style="text-align:center">40</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第八步</strong>：重复第一步。起点是唱片，除了吉他，下一个最便宜的节点是架子鼓。</p>
+<p><strong>第九步</strong>：重复第二步。计算前往该节点（架子鼓）的各个邻居的开销。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父节点</th>
+<th style="text-align:center">节点</th>
+<th style="text-align:center">开销</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">乐谱</td>
+<td style="text-align:center">海报</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">吉他</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td style="text-align:center">唱片</td>
+<td style="text-align:center">架子鼓</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td style="text-align:center">架子鼓</td>
+<td style="text-align:center">钢琴</td>
+<td style="text-align:center">35</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第十步</strong>：更新开销。</p>
+<p>通过架子鼓到钢琴更便宜，所以钢琴的父节点更新为架子鼓。</p>
+<p>至此，就找到了从乐谱到各个节点的最便宜的方案，例如要还到钢琴，就需要35元。怎么确定路径呢？根据父节点向前推导就可以知道这条路径了。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="定义散列表"><a href="#定义散列表" class="headerlink" title="定义散列表"></a>定义散列表</h3><p>一共需要三个散列表，一个是定义图，节点之间权值的散列表，一个是costs，一个是parents，也就是前文例子中的表格后两列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先定义一个散列表，起点分别是start，a，b，fin</span></span><br><span class="line">graph = &#123;<span class="string">"start"</span>: &#123;&#125;, <span class="string">"a"</span>: &#123;&#125;, <span class="string">"b"</span>: &#123;&#125;, <span class="string">"fin"</span>: &#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">graph[<span class="string">"start"</span>][<span class="string">"a"</span>] = <span class="number">4</span></span><br><span class="line">graph[<span class="string">"start"</span>][<span class="string">"b"</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">graph[<span class="string">"a"</span>][<span class="string">"fin"</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">graph[<span class="string">"b"</span>][<span class="string">"a"</span>] = <span class="number">3</span></span><br><span class="line">graph[<span class="string">"b"</span>][<span class="string">"fin"</span>] = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">infinity = float(<span class="string">"inf"</span>)</span><br><span class="line"><span class="comment"># 定义开销的散列表</span></span><br><span class="line">costs = &#123;&#125;</span><br><span class="line">costs[<span class="string">"a"</span>] = <span class="number">6</span></span><br><span class="line">costs[<span class="string">"b"</span>] = <span class="number">2</span></span><br><span class="line">costs[<span class="string">"fin"</span>] = infinity</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义父节点的散列表</span></span><br><span class="line">parents = &#123;&#125;</span><br><span class="line">parents[<span class="string">"a"</span>] = <span class="string">"start"</span></span><br><span class="line">parents[<span class="string">"b"</span>] = <span class="string">"start"</span></span><br><span class="line">parents[<span class="string">"fin"</span>] = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<h3 id="最小costs函数"><a href="#最小costs函数" class="headerlink" title="最小costs函数"></a>最小costs函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_lowest_cost_node</span><span class="params">(costs)</span>:</span></span><br><span class="line">    lowest_cost = float(<span class="string">"inf"</span>)</span><br><span class="line">    lowest_cost_node = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">for</span> node <span class="keyword">in</span> costs:</span><br><span class="line">        cost = costs[node]</span><br><span class="line">        <span class="keyword">if</span> cost &lt; lowest_cost <span class="keyword">and</span> node <span class="keyword">not</span> <span class="keyword">in</span> processed:</span><br><span class="line">            lowest_cost = cost</span><br><span class="line">            lowest_cost_node = node</span><br><span class="line">    <span class="keyword">return</span> lowest_cost_node</span><br></pre></td></tr></table></figure>
+<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">node = find_lowest_cost_node(costs)</span><br><span class="line"><span class="keyword">while</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">    cost = costs[node]</span><br><span class="line">    neighbors = graph[node]</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> neighbors.keys():</span><br><span class="line">        new_cost = cost + neighbors[n]</span><br><span class="line">        <span class="keyword">if</span> costs[n] &gt; new_cost:</span><br><span class="line">            costs[n] = new_cost</span><br><span class="line">            parents[n] = node</span><br><span class="line">    processed.append(node)</span><br><span class="line">    node = find_lowest_cost_node(costs)</span><br><span class="line">    print(node)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+	
+    
+
+    
+
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法分析/" <i class="fa fa-tag"></i> 算法分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/02/《算法图解》学习笔记6/" rel="next" title="《算法图解》学习笔记6">
+                <i class="fa fa-chevron-left"></i> 《算法图解》学习笔记6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.JPG"
+                alt="cici" />
+            
+              <p class="site-author-name" itemprop="name">cici</p>
+              <p class="site-description motion-element" itemprop="description">Python is the best language!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-Dijkstra算法"><span class="nav-number">1.</span> <span class="nav-text">第七章 Dijkstra算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法概述"><span class="nav-number">1.1.</span> <span class="nav-text">算法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心思路"><span class="nav-number">1.2.</span> <span class="nav-text">核心思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换钢琴的实例"><span class="nav-number">1.3.</span> <span class="nav-text">换钢琴的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.4.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义散列表"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义散列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小costs函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">最小costs函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主函数"><span class="nav-number">1.4.3.</span> <span class="nav-text">主函数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cici</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数: <span id="busuanzi_value_site_pv"></span>	&#8194;|&#8194;</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#8194;|&#8194;博客全站共25.3k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
