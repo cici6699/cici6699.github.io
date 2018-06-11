@@ -121,7 +121,11 @@
 <meta property="og:description" content="第九章的学习笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/摘要配图/算法图解.jpg">
-<meta property="og:updated_time" content="2018-06-11T15:04:57.425Z">
+<meta property="og:image" content="https://i.loli.net/2018/06/11/5b1e94011aa87.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/11/5b1e94226bfa8.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/11/5b1e94375e4c1.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/11/5b1e944e4083f.png">
+<meta property="og:updated_time" content="2018-06-11T15:25:08.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《图解算法》学习笔记9">
 <meta name="twitter:description" content="第九章的学习笔记">
@@ -410,60 +414,26 @@
 </ul>
 <p>为了让盗窃的商品价值最高，应该怎么选择商品？</p>
 <h3 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h3><p>每一个动态规划问题都是从一个网格开始，背包问题的网格如下：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:left">1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>吉他</td>
-<td style="text-align:left"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>音响</td>
-<td style="text-align:left"></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>笔记本电脑</td>
-<td style="text-align:left"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p><img src="https://i.loli.net/2018/06/11/5b1e94011aa87.png" alt="a.png"></p>
 <p>网格的各行为商品，各列为不同容量（1~4磅）的背包。所有这些列都需要，因为他们帮助你计算子背包的价值。网格最初是空的，你将填充其中的每一个单元格，网格填满后，就可以得出答案。</p>
 <p>现在开始填表：</p>
 <ul>
 <li><p>吉他行</p>
 <p>这一行中，你能够拿的物品只有吉他。当背包容量为1时就可以拿吉他，因为吉他的重量就是1，这时最大价值为1500，接下来当背包容量为2，3，4时，依然只能拿吉他，所以第一行全部都是1500。</p>
-<p>|            | 1    | 2    | 3    | 4    |<br>| ———- | —- | —- | —- | —- |<br>| 吉他       | 1500 | 1500 | 1500 | 1500 |<br>| 音响       |      |      |      |      |<br>| 笔记本电脑 |      |      |      |      |</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e94226bfa8.png" alt="b.png"></p>
 </li>
 <li><p>音响行</p>
 <p>现在可以选择的物品有吉他和音响。当容量为1，2，3时，只能拿吉他，价值为1500；当容量为4时，可以拿音响，音响比吉他值钱，所以拿音响，价值为3000。</p>
 <p>这时容量为4的背包最大价值更新为3000。</p>
-<p>|            | 1    | 2    | 3    | 4    |<br>| ———- | —- | —- | —- | —- |<br>| 吉他       | 1500 | 1500 | 1500 | 1500 |<br>| 音响       | 1500 | 1500 | 1500 | 3000 |<br>| 笔记本电脑 |      |      |      |      |</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e94375e4c1.png" alt="c.png"></p>
 </li>
-</ul>
-<ul>
 <li><p>笔记本电脑行</p>
 <p>现在可以选择的物品有吉他、音响、笔记本电脑。当容量为1，2时，只能拿吉他，价值1500；当容量为3时，可以拿笔记本电脑，更新价值为2000；当容量为4时，可以拿（容量为3时的最大值 + 余下的1磅物品）或者之前选择的音响。发现笔记本电脑+吉他更之前，更新价值为4500。</p>
-<p>|            | 1    | 2    | 3    | 4    |<br>| ———- | —- | —- | —- | —- |<br>| 吉他       | 1500 | 1500 | 1500 | 1500 |<br>| 音响       | 1500 | 1500 | 1500 | 3000 |<br>| 笔记本电脑 | 1500 | 1500 | 2000 | 4500 |</p>
+<p><img src="https://i.loli.net/2018/06/11/5b1e944e4083f.png" alt="d.png"></p>
 </li>
 </ul>
 <p>现在表填完了，最后一行的最后一列代表所有物品都可以选且容量为背包最大容量时能获得的最大价值，即为答案。</p>
-<h3 id="动态规划算法"><a href="#动态规划算法" class="headerlink" title="动态规划算法"></a>动态规划算法</h3><p>在刚刚填表的过程中，其实是有一套规则的：<br>$$<br>cell\ [\ i\  ][\  j\  ]=<br>\begin{cases}  上一个单元格的值（即cell\ [\ i-1\ ][\ j-1\ ]的值）<br>\当前商品的价值 + 剩余空间的价值（cell\ [\ i-1\ ][\ j- 当前商品的重量\ ]）<br>\end{cases}<br>$$<br><strong>背包问题FAQ</strong></p>
+<h3 id="动态规划算法"><a href="#动态规划算法" class="headerlink" title="动态规划算法"></a>动态规划算法</h3><p>在刚刚填表的过程中，其实是有一套规则的：<br>$$<br>cell\ [\ i\  ][\  j\  ]=<br>\begin{cases}  上一个单元格的值（即cell\ [\ i-1\ ][\ j-1\ ]的值）<br>\\当前商品的价值 + 剩余空间的价值（cell\ [\ i-1\ ][\ j- 当前商品的重量\ ]）<br>\end{cases}<br>$$<br><strong>背包问题FAQ</strong></p>
 <ul>
 <li><p>Q：再增加一个物品呢？</p>
 <p>A：直接再加一行即可，表格中前面的值不变，只用填新加的这一行就可以了，依然遵循刚才的填表原则。</p>
@@ -823,7 +793,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共27.5k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共27.4k字</span>
 </div>
 
         
