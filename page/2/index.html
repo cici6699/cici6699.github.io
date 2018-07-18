@@ -7,7 +7,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -155,7 +155,7 @@
 
 
 
-  <title> cici的blog </title>
+  <title> cici的blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -174,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
@@ -362,6 +362,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -525,6 +526,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -688,6 +690,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -852,6 +855,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1004,6 +1008,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1156,6 +1161,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1308,6 +1314,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1471,6 +1478,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1623,6 +1631,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -1775,6 +1784,7 @@
         
 
         <div class="post-meta">
+			
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -2590,7 +2600,24 @@ show_date_time();
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 
@@ -2600,3 +2627,5 @@ show_date_time();
 
 </body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
