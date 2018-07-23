@@ -447,14 +447,14 @@
         <p><img src="/images/摘要配图/算法图解.jpg" width="600" height="300" alt="git" align="center"></p>
 <p>第四章的学习笔记</p>
 <a id="more"></a>
-<h1><span id="第四章-快速排序">第四章 快速排序</span></h1><h2><span id="分治法分而治之">分治法——分而治之</span></h2><p><strong>总述</strong></p>
+<h1 id="第四章-快速排序"><a href="#第四章-快速排序" class="headerlink" title="第四章 快速排序"></a>第四章 快速排序</h1><h2 id="分治法——分而治之"><a href="#分治法——分而治之" class="headerlink" title="分治法——分而治之"></a>分治法——分而治之</h2><p><strong>总述</strong></p>
 <p>分而治之（divide and conquer,D&amp;C）是一种著名的递归式问题解决方法。分治法提供了一种解决问题的思路，是另一种可供你使用的工具。分治法的核心思想就是用一种对解决某个问题通用而且尽可能简单的方法，不断缩小问题的规模，知道求解出问题为止。</p>
 <p><strong>步骤</strong></p>
 <ol>
 <li>找出基线条件，这种条件必须尽可能简单</li>
 <li>不断将问题分解（缩小规模），直到符合基线条件。</li>
 </ol>
-<h3><span id="分治法划分方块问题">分治法：划分方块问题</span></h3><p><strong>题目要求</strong></p>
+<h3 id="分治法：划分方块问题"><a href="#分治法：划分方块问题" class="headerlink" title="分治法：划分方块问题"></a>分治法：划分方块问题</h3><p><strong>题目要求</strong></p>
 <p>现在有一个矩形，边长为1680 * 640，需要将这个矩形均匀地分成方块，且分出的方块要尽可能大。</p>
 <p><strong>思路</strong></p>
 <ol>
@@ -471,7 +471,7 @@
 </ul>
 <p>最后，对于最初的那个矩形，适用的最大方块为80*80。</p>
 <p>这里用到了一个原理：适用于这小块地的最大方块，也是适用于整块地的最大方块。这个原理来源于欧几里得算法。</p>
-<h3><span id="分治法求数组元素之和">分治法：求数组元素之和</span></h3><p><strong>题目要求</strong></p>
+<h3 id="分治法：求数组元素之和"><a href="#分治法：求数组元素之和" class="headerlink" title="分治法：求数组元素之和"></a>分治法：求数组元素之和</h3><p><strong>题目要求</strong></p>
 <p>给出一个数组，数组中有一串数组，现在需要求这数组中数字元素之和。</p>
 <p>最简单的方法就是直接循环求和：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(arr)</span>:</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> arr:</span><br><span class="line">        total += x</span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
@@ -480,9 +480,9 @@
 <p><strong>第一步</strong>：找出基线条件：<br>$$<br>\begin{cases}空集不包含任何元素 ,&amp; \text{总和为0} \\ 只包含一个元素, &amp; \text {总和为该元素本身}<br>\end{cases}<br>$$<br><strong>第二步</strong>：缩小规模：</p>
 <p><img src="https://i.loli.net/2018/05/30/5b0e8efacecfd.png" alt="未命名文件.png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dc_sum</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> arr == []:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>] + dc_sum(arr[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure>
-<h3><span id="分治法快速排序">分治法：快速排序</span></h3><p>快速排序的思想是：先选择一个元素值做为基准值，然后将数组中所有小于基准数的数放在这个数的左边，大于这个数的元素都放在右边。再在这两个子数组中做这种操作，各选择一个基准数，然后小的放一边，大的放一边……直到子数组为空或者只有一个元素（这两种情况下的子数组一定是有序的）。</p>
+<h3 id="分治法：快速排序"><a href="#分治法：快速排序" class="headerlink" title="分治法：快速排序"></a>分治法：快速排序</h3><p>快速排序的思想是：先选择一个元素值做为基准值，然后将数组中所有小于基准数的数放在这个数的左边，大于这个数的元素都放在右边。再在这两个子数组中做这种操作，各选择一个基准数，然后小的放一边，大的放一边……直到子数组为空或者只有一个元素（这两种情况下的子数组一定是有序的）。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(arr) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> arr</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pivot = arr[<span class="number">0</span>] <span class="comment">#这里直接把第一个元素当做基准值</span></span><br><span class="line">        less = [i <span class="keyword">for</span> i <span class="keyword">in</span> arr[<span class="number">1</span>:] <span class="keyword">if</span> i &lt;= pivot]</span><br><span class="line">        more = [i <span class="keyword">for</span> i <span class="keyword">in</span> arr[<span class="number">1</span>:] <span class="keyword">if</span> i &gt; pivot]</span><br><span class="line">        <span class="keyword">return</span> quick_sort(less) + [pivot] + quick_sort(more)</span><br></pre></td></tr></table></figure>
-<h2><span id="总结">总结</span></h2><ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>分治法将问题逐步分解，划分成n个子问题。使用分治法处理列表时，基线条件很可能是空数组或者只包含一个元素。</li>
 <li>实现快速排序时，基准值可以随机选择。</li>
 <li>快速排序的平均运行时间为O(n logn)。</li>
@@ -743,7 +743,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">第四章 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">分治法——分而治之</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.1.</span> <span class="nav-text">分治法：划分方块问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.2.</span> <span class="nav-text">分治法：求数组元素之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.3.</span> <span class="nav-text">分治法：快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-快速排序"><span class="nav-number">1.</span> <span class="nav-text">第四章 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分治法——分而治之"><span class="nav-number">1.1.</span> <span class="nav-text">分治法——分而治之</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分治法：划分方块问题"><span class="nav-number">1.1.1.</span> <span class="nav-text">分治法：划分方块问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治法：求数组元素之和"><span class="nav-number">1.1.2.</span> <span class="nav-text">分治法：求数组元素之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治法：快速排序"><span class="nav-number">1.1.3.</span> <span class="nav-text">分治法：快速排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -796,7 +796,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共42.9k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共42.7k字</span>
 </div>
 
         
