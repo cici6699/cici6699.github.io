@@ -447,13 +447,13 @@
         <p><img src="/images/摘要配图/算法图解.jpg" width="600" height="300" alt="git" align="center"></p>
 <p>第六章的学习笔记</p>
 <a id="more"></a>
-<h1 id="第六章-广度优先搜索"><a href="#第六章-广度优先搜索" class="headerlink" title="第六章 广度优先搜索"></a>第六章 广度优先搜索</h1><h2 id="BFS的核心思想：层层递进"><a href="#BFS的核心思想：层层递进" class="headerlink" title="BFS的核心思想：层层递进"></a>BFS的核心思想：层层递进</h2><p>首先以一个未被访问过的顶点作为起始顶点，访问其所有相邻的顶点，然后对每个相邻的顶点再访问它们相邻的未被访问过的顶点，直到所有顶点都被访问过，遍历结束。 </p>
+<h1><span id="第六章-广度优先搜索">第六章 广度优先搜索</span></h1><h2><span id="bfs的核心思想层层递进">BFS的核心思想：层层递进</span></h2><p>首先以一个未被访问过的顶点作为起始顶点，访问其所有相邻的顶点，然后对每个相邻的顶点再访问它们相邻的未被访问过的顶点，直到所有顶点都被访问过，遍历结束。 </p>
 <p>BFS搜索是一种用于图的查找，可以帮助回答两类问题：</p>
 <ul>
 <li>从节点A出发，有前往节点B的路径吗？</li>
 <li>从节点A出发，前往节点B的哪条路径最短？</li>
 </ul>
-<h2 id="芒果经销商的例子"><a href="#芒果经销商的例子" class="headerlink" title="芒果经销商的例子"></a>芒果经销商的例子</h2><ul>
+<h2><span id="芒果经销商的例子">芒果经销商的例子</span></h2><ul>
 <li>假设你经营着一个芒果农场，需要寻找芒果经销商，为此，你在朋友列表中查找</li>
 <li>这种查找很简单，创建一个朋友名单，并依次遍历每一个朋友看她是不是芒果经销商</li>
 <li>假设没有，这时就要在朋友的朋友中查找</li>
@@ -463,12 +463,12 @@
 </ul>
 <p>广度优先搜索就是先查找一度关系，再查找二度关系、再查找三度关系，以此类推。在广度优先搜索的执行过程中，搜索范围从起点开始逐渐向外延伸，一层一层的向外查找。</p>
 <p>注意，必须按照添加顺序查找时，才能实现这样的目的。如果不按照层次顺序查找，就无法找到最短路径。想要按照添加顺序进行检查，就需要使用一种数据结构，那就是队列（queue）。</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是一种<strong>先进先出</strong>（First In First Out,FIFO）的数据结构，而栈是一种<strong>后进先出</strong>（Last In First Out,LIFO）的数据结构。</p>
+<h2><span id="队列">队列</span></h2><p>队列是一种<strong>先进先出</strong>（First In First Out,FIFO）的数据结构，而栈是一种<strong>后进先出</strong>（Last In First Out,LIFO）的数据结构。</p>
 <p>队列的工作原理与生活中的队列完全相同，不能随机访问队列中的元素，队列只支持两种操作：<strong>入队和出队</strong>。</p>
-<h2 id="实现算法"><a href="#实现算法" class="headerlink" title="实现算法"></a>实现算法</h2><p><img src="https://i.loli.net/2018/06/04/5b14f09577b22.png" alt="bfs算法.png"></p>
+<h2><span id="实现算法">实现算法</span></h2><p><img src="https://i.loli.net/2018/06/04/5b14f09577b22.png" alt="bfs算法.png"></p>
 <p>首先，创建一个队列。在python中，可以用deque来创建一个双端队列。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以用散列表来生成图</span></span><br><span class="line">graph = &#123;&#125;</span><br><span class="line">graph[<span class="string">'you'</span>] = [<span class="string">'alice'</span>, <span class="string">'bob'</span>, <span class="string">'claire'</span>]</span><br><span class="line">graph[<span class="string">'bob'</span>] = [<span class="string">'anuj'</span>, <span class="string">'peggy'</span>]</span><br><span class="line">graph[<span class="string">'alice'</span>] = [<span class="string">'peggy'</span>]</span><br><span class="line">graph[<span class="string">'claire'</span>] = [<span class="string">'thom'</span>, <span class="string">'jonny'</span>]</span><br><span class="line">graph[<span class="string">'anuj'</span>] = []</span><br><span class="line">graph[<span class="string">'peggy'</span>] = []</span><br><span class="line">graph[<span class="string">'thom'</span>] = []</span><br><span class="line">graph[<span class="string">'jonny'</span>] = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person_is_seller</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="comment"># 自定义以m结尾的名字就是芒果经销商</span></span><br><span class="line">    <span class="keyword">return</span> name[<span class="number">-1</span>] == <span class="string">'m'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(name)</span>:</span></span><br><span class="line">    search_queue = deque()</span><br><span class="line">    search_queue += graph[name]</span><br><span class="line">    searched = []</span><br><span class="line">    <span class="keyword">while</span> search_queue:</span><br><span class="line">        person = search_queue.popleft()  <span class="comment"># 取出第一个人</span></span><br><span class="line">        <span class="keyword">if</span> person <span class="keyword">not</span> <span class="keyword">in</span> searched:</span><br><span class="line">            <span class="keyword">if</span> person_is_seller(person):</span><br><span class="line">                print(person + <span class="string">" is a mango seller!"</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                search_queue += graph[person]</span><br><span class="line">                searched.append(person)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    search(<span class="string">'you'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<h2><span id="小结">小结</span></h2><ul>
 <li>广度优先搜索指出是否有从A到B的路径。</li>
 <li>如果有，广度优先搜索将找出最短路径。</li>
 <li>有向图中的边为箭头，箭头方向指定了关系的方向。</li>
@@ -732,7 +732,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章-广度优先搜索"><span class="nav-number">1.</span> <span class="nav-text">第六章 广度优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS的核心思想：层层递进"><span class="nav-number">1.1.</span> <span class="nav-text">BFS的核心思想：层层递进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#芒果经销商的例子"><span class="nav-number">1.2.</span> <span class="nav-text">芒果经销商的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">1.3.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现算法"><span class="nav-number">1.4.</span> <span class="nav-text">实现算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">第六章 广度优先搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">BFS的核心思想：层层递进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">芒果经销商的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">实现算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -785,7 +785,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共35.8k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共42.9k字</span>
 </div>
 
         

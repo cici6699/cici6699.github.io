@@ -447,7 +447,7 @@
         <p><img src="https://i.loli.net/2018/05/01/5ae85bbc1a959.png" width="600" height="300" alt="git" align="center"> </p>
 <p>Scikit learn 也简称 sklearn, 是机器学习领域当中最知名的 python 模块之一。</p>
 <a id="more"></a>
-<h1 id="Scikit-learn模块"><a href="#Scikit-learn模块" class="headerlink" title="Scikit learn模块"></a>Scikit learn模块</h1><p>Scikit learn 也简称 sklearn, 是机器学习领域当中最知名的 python 模块之一。</p>
+<h1><span id="scikit-learn模块">Scikit learn模块</span></h1><p>Scikit learn 也简称 sklearn, 是机器学习领域当中最知名的 python 模块之一。</p>
 <p>Sklearn 包含了很多种机器学习的方式:</p>
 <ul>
 <li>Classification 分类（监督学习）</li>
@@ -460,11 +460,11 @@
 <p><strong>在股票、房价预测中可以使用线性回归。</strong></p>
 <p><img src="https://i.loli.net/2018/05/01/5ae85bbc1a959.png" alt="sklearn的流程图"></p>
 <p>其中蓝色圆圈内是判断条件，绿色方框内是可以选择的算法</p>
-<h1 id="sklearn-的使用"><a href="#sklearn-的使用" class="headerlink" title="sklearn 的使用"></a>sklearn 的使用</h1><h2 id="正则化输入"><a href="#正则化输入" class="headerlink" title="正则化输入"></a>正则化输入</h2><p><strong>正则化含义解释</strong> ：</p>
+<h1><span id="sklearn-的使用">sklearn 的使用</span></h1><h2><span id="正则化输入">正则化输入</span></h2><p><strong>正则化含义解释</strong> ：</p>
 <p>如果输入特征属于不同范围内，可能有些特征值从0到1，有些特征值从1到1000，那么归一化（normalize）特征值就非常重要了。</p>
 <p>具体参考吴恩达课程<a href="http://mooc.study.163.com/learn/2001281003?tid=2001391036#/learn/content?type=detail&amp;id=2001701046" target="_blank" rel="noopener">http://mooc.study.163.com/learn/2001281003?tid=2001391036#/learn/content?type=detail&amp;id=2001701046</a></p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将收盘数据正则化，全部化为-1到1之间的数</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> preprocessing <span class="comment">#标准化数据模块</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span><span class="params">()</span>:</span></span><br><span class="line">	data = pd.read_csv(<span class="string">"new_day_close.csv"</span>)</span><br><span class="line">	data = data.iloc[:,<span class="number">1</span>:]</span><br><span class="line">	normalized = preprocessing.scale(data)</span><br><span class="line">	print(normalized)</span><br></pre></td></tr></table></figure>
-<h2 id="SVR——Support-Vector-Regression"><a href="#SVR——Support-Vector-Regression" class="headerlink" title="SVR——Support Vector Regression"></a>SVR——Support Vector Regression</h2><h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><h3 id="K-CV方法"><a href="#K-CV方法" class="headerlink" title="K-CV方法"></a>K-CV方法</h3><p>将原始数据分成K组(一般是均分),将每个子集数据分别做一次验证集,其余的K-1组子集数据作为训练集,这样会得到K个模型,用这K个模型最终的验证集的分类准确率的平均数作为此K-CV下分类器的性能指标.K一般大于等于2,实际操作时一般从3开始取,只有在原始数据集合数据量小的时候才会尝试取2.K-CV可以有效的避免过学习以及欠学习状态的发生,最后得到的结果也比较具有说服性。</p>
+<h2><span id="svrsupport-vector-regression">SVR——Support Vector Regression</span></h2><h2><span id="交叉验证">交叉验证</span></h2><h3><span id="k-cv方法">K-CV方法</span></h3><p>将原始数据分成K组(一般是均分),将每个子集数据分别做一次验证集,其余的K-1组子集数据作为训练集,这样会得到K个模型,用这K个模型最终的验证集的分类准确率的平均数作为此K-CV下分类器的性能指标.K一般大于等于2,实际操作时一般从3开始取,只有在原始数据集合数据量小的时候才会尝试取2.K-CV可以有效的避免过学习以及欠学习状态的发生,最后得到的结果也比较具有说服性。</p>
 
       
     </div>
@@ -719,7 +719,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scikit-learn模块"><span class="nav-number">1.</span> <span class="nav-text">Scikit learn模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sklearn-的使用"><span class="nav-number">2.</span> <span class="nav-text">sklearn 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化输入"><span class="nav-number">2.1.</span> <span class="nav-text">正则化输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVR——Support-Vector-Regression"><span class="nav-number">2.2.</span> <span class="nav-text">SVR——Support Vector Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉验证"><span class="nav-number">2.3.</span> <span class="nav-text">交叉验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#K-CV方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">K-CV方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Scikit learn模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">sklearn 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">正则化输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">SVR——Support Vector Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">交叉验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.1.</span> <span class="nav-text">K-CV方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -772,7 +772,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共35.8k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共42.9k字</span>
 </div>
 
         

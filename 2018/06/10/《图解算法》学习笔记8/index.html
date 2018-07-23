@@ -446,7 +446,7 @@
         <p><img src="/images/摘要配图/算法图解.jpg" width="600" height="300" alt="git" align="center"></p>
 <p>第八章的学习笔记</p>
 <a id="more"></a>
-<h1 id="第八章-贪婪算法"><a href="#第八章-贪婪算法" class="headerlink" title="第八章 贪婪算法"></a>第八章 贪婪算法</h1><h2 id="教室调度问题"><a href="#教室调度问题" class="headerlink" title="教室调度问题"></a>教室调度问题</h2><p>假设有一张课表，你希望将尽可能多的课程安排在某间教室上。但是又本可能所有课都在这一间教室上，因为有些课的上课时间有冲突。</p>
+<h1><span id="第八章-贪婪算法">第八章 贪婪算法</span></h1><h2><span id="教室调度问题">教室调度问题</span></h2><p>假设有一张课表，你希望将尽可能多的课程安排在某间教室上。但是又本可能所有课都在这一间教室上，因为有些课的上课时间有冲突。</p>
 <table>
 <thead>
 <tr>
@@ -483,11 +483,11 @@
 <p>2.接下来，必须选择第一堂课结束后才开始的课。同样，你选择结束最早的课，这将是要在这间教室上的第二堂课。</p>
 <p>重复这样做就能找到答案。</p>
 <p>贪婪算法很简单：每一步都采取最优的做法。用专业术语说，每步都选择局部最优解，最终得到的就是全局最优解。</p>
-<h2 id="集合覆盖问题"><a href="#集合覆盖问题" class="headerlink" title="集合覆盖问题"></a>集合覆盖问题</h2><p>假设需要让全美50个州都收到广播节目，不同的广播公司向不同的州广播，怎么选择最少的广播公司呢？</p>
+<h2><span id="集合覆盖问题">集合覆盖问题</span></h2><p>假设需要让全美50个州都收到广播节目，不同的广播公司向不同的州广播，怎么选择最少的广播公司呢？</p>
 <p>这就需要列举出所有可能的集合，在这个集合中选择覆盖全美50个州的最小集合。</p>
 <p>这样的穷举需要耗费大量的时间，效率极低。为了解决这种问题，可以采用近似算法，使用贪婪算法可以得到非常接近的解，而时间可以大大缩短。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">states_needed = &#123;<span class="string">"mt"</span>, <span class="string">"wa"</span>, <span class="string">"or"</span>, <span class="string">"id"</span>, <span class="string">"nv"</span>, <span class="string">"ut"</span>, <span class="string">"ca"</span>, <span class="string">"az"</span>&#125;</span><br><span class="line">stations = &#123;<span class="string">"kone"</span>: &#123;<span class="string">"id"</span>, <span class="string">"nv"</span>, <span class="string">"ut"</span>&#125;,</span><br><span class="line">            <span class="string">"ktwo"</span>: &#123;<span class="string">"wa"</span>, <span class="string">"id"</span>, <span class="string">"mt"</span>&#125;,</span><br><span class="line">            <span class="string">"kthree"</span>: &#123;<span class="string">"or"</span>, <span class="string">"nv"</span>, <span class="string">"ca"</span>&#125;,</span><br><span class="line">            <span class="string">"kfour"</span>: &#123;<span class="string">"nv"</span>, <span class="string">"ut"</span>&#125;,</span><br><span class="line">            <span class="string">"kfive"</span>: &#123;<span class="string">"ca"</span>, <span class="string">"az"</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line">final_stations = set()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> states_needed:</span><br><span class="line">    best_station = <span class="keyword">None</span></span><br><span class="line">    states_covered = set()</span><br><span class="line">    <span class="keyword">for</span> station, states <span class="keyword">in</span> stations.items():</span><br><span class="line">        covered = states_needed &amp; states</span><br><span class="line">        <span class="keyword">if</span> len(covered) &gt; len(states_covered):</span><br><span class="line">            best_station = station</span><br><span class="line">            states_covered = covered</span><br><span class="line"></span><br><span class="line">    states_needed -= states_covered</span><br><span class="line">    final_stations.add(best_station)</span><br><span class="line"></span><br><span class="line">print(final_stations)</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<h2><span id="小结">小结</span></h2><ul>
 <li>旅行商问题和集合覆盖问题有一个共同之处：需要计算所有的解，并从中选出最小/最短的那个。这两个问题都属于NP完全问题。</li>
 <li>元素较少时算法的运算速度非常快，但是随着元素数量的增加，速度会变得非常慢。</li>
 <li>涉及“所有组合”的问题通常是NP完全问题。</li>
@@ -748,7 +748,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第八章-贪婪算法"><span class="nav-number">1.</span> <span class="nav-text">第八章 贪婪算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教室调度问题"><span class="nav-number">1.1.</span> <span class="nav-text">教室调度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合覆盖问题"><span class="nav-number">1.2.</span> <span class="nav-text">集合覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">第八章 贪婪算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">教室调度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">集合覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -801,7 +801,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共35.8k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共42.9k字</span>
 </div>
 
         
