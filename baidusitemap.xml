@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>https://cici6699.github.io/2018/07/24/SpringMVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-07-24T15:06:45.937Z</lastmod>
+    <data>
+        <display>
+        <title>SpringMVC学习笔记</title>
+        <pubTime>2018-07-24T08:48:00.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>Spring MVC</tag>
+         
+        <tag>IDEA</tag>
+         
+         
+           
+             
+              <breadCrumb title="spring MVC" url="https://cici6699.github.io/categories/spring-MVC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://cici6699.github.io/2018/07/24/%E5%85%B3%E4%BA%8ESpringMVC%E7%9A%84url-pattern/</loc>
-    <lastmod>2018-07-24T04:32:03.787Z</lastmod>
+    <lastmod>2018-07-24T08:49:53.410Z</lastmod>
     <data>
         <display>
         <title>关于SpringMVC的url-pattern</title>
@@ -14,8 +38,6 @@
         <tag>java</tag>
          
         <tag>Spring MVC</tag>
-         
-        <tag>maven</tag>
          
         <tag>IDEA</tag>
          

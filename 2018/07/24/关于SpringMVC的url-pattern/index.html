@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="java,Spring MVC,maven,IDEA," />
+  <meta name="keywords" content="java,Spring MVC,IDEA," />
 
 
 
@@ -113,14 +113,14 @@
 
 
 <meta name="description" content="记录在学习spring MVC中遇到的一个坑：controller里面定义的内容无法访问，报错404。最后发现是web.xml配置文件里面的一个小错误，在这里做一个记录。">
-<meta name="keywords" content="java,Spring MVC,maven,IDEA">
+<meta name="keywords" content="java,Spring MVC,IDEA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于SpringMVC的url-pattern">
 <meta property="og:url" content="https://cici6699.github.io/2018/07/24/关于SpringMVC的url-pattern/index.html">
 <meta property="og:site_name" content="cici的blog">
 <meta property="og:description" content="记录在学习spring MVC中遇到的一个坑：controller里面定义的内容无法访问，报错404。最后发现是web.xml配置文件里面的一个小错误，在这里做一个记录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T04:32:03.787Z">
+<meta property="og:updated_time" content="2018-07-24T08:49:53.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于SpringMVC的url-pattern">
 <meta name="twitter:description" content="记录在学习spring MVC中遇到的一个坑：controller里面定义的内容无法访问，报错404。最后发现是web.xml配置文件里面的一个小错误，在这里做一个记录。">
@@ -433,7 +433,6 @@
         <p>记录在学习spring MVC中遇到的一个坑：controller里面定义的内容无法访问，报错404。最后发现是web.xml配置文件里面的一个小错误，在这里做一个记录。</p>
 <a id="more"></a>
 <p>在Intelli IDEA中初始化一个springMVC项目以后，web.xml的内容如下：</p>
-<p>图1</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">"4.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>/WEB-INF/applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后在controller中定义了一个页面跳转：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloMVCController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">printWelcome</span><span class="params">(ModelMap model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"msg"</span>, <span class="string">"Spring MVC Hello World"</span>);</span><br><span class="line">        model.put(<span class="string">"content"</span>, <span class="string">"This is my first spring mvc web!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -476,8 +475,6 @@
           
             <a href="/tags/Spring-MVC/" <i class="fa fa-tag"></i> Spring MVC</a>
           
-            <a href="/tags/maven/" <i class="fa fa-tag"></i> maven</a>
-          
             <a href="/tags/IDEA/" <i class="fa fa-tag"></i> IDEA</a>
           
         </div>
@@ -500,6 +497,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/24/SpringMVC学习笔记/" rel="prev" title="SpringMVC学习笔记">
+                SpringMVC学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -571,7 +572,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -729,7 +730,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#8194;|&#8194;博客全站共44.8k字</span>
+  <span class="post-count">&#8194;|&#8194;博客全站共45.3k字</span>
 </div>
 
         
