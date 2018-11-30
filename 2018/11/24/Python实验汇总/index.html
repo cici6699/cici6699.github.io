@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon (2).ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon (2).ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python实验课的实验内容汇总……">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实验汇总">
+<meta property="og:url" content="https://cici6699.github.io/2018/11/24/Python实验汇总/index.html">
+<meta property="og:site_name" content="cici的blog">
+<meta property="og:description" content="Python实验课的实验内容汇总……">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2018/11/26/5bfbef0e5ba43.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/26/5bfbeee45abb1.png">
+<meta property="og:updated_time" content="2018-11-30T10:19:17.189Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python实验汇总">
+<meta name="twitter:description" content="Python实验课的实验内容汇总……">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/26/5bfbef0e5ba43.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>Python实验汇总 | cici的blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+	<meta name="google-site-verification" content="PQFgiRzSt8XUwZ9BicSAksi3K1rdpqMF_5_mNGCjf1k" />
+	
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cici的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-note">
+          <a href="/categories/学习笔记" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书笔记
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cici6699.github.io/2018/11/24/Python实验汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cici">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cici的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python实验汇总</h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-24T22:46:55+08:00">
+                2018-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python实验课的实验内容汇总……</p>
+<a id="more"></a>
+<h1 id="实验一-Python环境及基础"><a href="#实验一-Python环境及基础" class="headerlink" title="实验一 Python环境及基础"></a>实验一 Python环境及基础</h1><h2 id="题目1：字符串拼接"><a href="#题目1：字符串拼接" class="headerlink" title="题目1：字符串拼接"></a>题目1：字符串拼接</h2><p>接受用户输入的两个字符串，将它们组合后输出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 = input(<span class="string">"请输入第一个字符串："</span>)</span><br><span class="line">str2 = input(<span class="string">"请输入第二个字符串："</span>)</span><br><span class="line">print(str1 + str2)</span><br></pre></td></tr></table></figure>
+<div class="note success">两个字符串可以用“+”连接成为一个新的字符串。</div>
+
+<h2 id="题目2：整数序列求和"><a href="#题目2：整数序列求和" class="headerlink" title="题目2：整数序列求和"></a>题目2：整数序列求和</h2><p>用户输入一个正整数N,计算从1到N(包含1和N)相加之后的结果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num = eval(input(<span class="string">"请输入一个整数："</span>))</span><br><span class="line">sum = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(num+<span class="number">1</span>):</span><br><span class="line">    sum = sum + i</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+<div class="note success">range(n)是从0到n-1</div>
+
+<h2 id="题目3：健康食谱输出"><a href="#题目3：健康食谱输出" class="headerlink" title="题目3：健康食谱输出"></a>题目3：健康食谱输出</h2><p>列出5种不同的食材，输出它们可能组成的所有菜式名称。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">diet = [<span class="string">'土豆'</span>,<span class="string">'萝卜'</span>,<span class="string">'牛肉'</span>,<span class="string">'白菜'</span>,<span class="string">'鸡肉'</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> diet:</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> diet:</span><br><span class="line">        <span class="keyword">if</span> x != y:</span><br><span class="line">            print(x+y)</span><br></pre></td></tr></table></figure>
+<div class="note success">数组循环，可以使用for i in （数组名）的方式循环遍历。</div>
+
+<h2 id="题目4：太阳花的绘制"><a href="#题目4：太阳花的绘制" class="headerlink" title="题目4：太阳花的绘制"></a>题目4：太阳花的绘制</h2><p>绘制一个太阳花图形，效果如图：</p>
+<p><img src="https://i.loli.net/2018/11/26/5bfbef0e5ba43.png" alt="花.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">turtle.color(<span class="string">'red'</span>, <span class="string">'yellow'</span>)</span><br><span class="line">    turtle.begin_fill()</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        turtle.forward(<span class="number">200</span>)</span><br><span class="line">        turtle.left(<span class="number">170</span>)</span><br><span class="line">        <span class="keyword">if</span> abs(turtle.pos()) &lt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    turtle.end_fill()</span><br><span class="line">    turtle.done()</span><br></pre></td></tr></table></figure>
+<div class="note success">turtle库的用法</div>
+
+
+
+<h1 id="实验二-字符串运算及字符串格式化"><a href="#实验二-字符串运算及字符串格式化" class="headerlink" title="实验二 字符串运算及字符串格式化"></a>实验二 字符串运算及字符串格式化</h1><h2 id="题目1：格式化输出字符串堆积的三角形"><a href="#题目1：格式化输出字符串堆积的三角形" class="headerlink" title="题目1：格式化输出字符串堆积的三角形"></a>题目1：格式化输出字符串堆积的三角形</h2><p>其中，str.center()方法用于字符串两边填充：str.rjust(width[,fillchar])方法用于字符串右填充。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"1"</span>.center(<span class="number">20</span>)) <span class="comment"># 1行20个字符，居中对齐</span></span><br><span class="line">print(format(<span class="string">"121"</span>, <span class="string">"^20"</span>))  <span class="comment"># 1行20个字符，居中对齐</span></span><br><span class="line">print(format(<span class="string">"12321"</span>, <span class="string">"^20"</span>))  <span class="comment"># 1行20个字符，居中对齐</span></span><br><span class="line">print(<span class="string">"1"</span>.rjust(<span class="number">20</span>, <span class="string">"*"</span>))  <span class="comment"># 1行20个字符，右对齐，加*号</span></span><br><span class="line">print(format(<span class="string">"121"</span>, <span class="string">"*&gt;20"</span>))  <span class="comment"># 1行20个字符，右对齐，加*号</span></span><br><span class="line">print(format(<span class="string">"12321"</span>, <span class="string">"*&gt;20"</span>))  <span class="comment"># 1行20个字符，右对齐，加*号</span></span><br></pre></td></tr></table></figure>
+<div class="note success">字符串的格式化，须熟悉掌握</div>
+
+<h2 id="题目2：天天向上"><a href="#题目2：天天向上" class="headerlink" title="题目2：天天向上"></a>题目2：天天向上</h2><p>一年365天，以第1天的能力值为基数，记为1.0，当好好学习时能力值相比前一天提高1‰，当没有学习是由于遗忘等原因能力值相比前一天下降1‰，每天努力和每天放任，一年下来的能力值相差多少呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dayup = <span class="number">1</span></span><br><span class="line">daydown = <span class="number">1</span></span><br><span class="line">power = <span class="number">0.001</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">365</span>+<span class="number">1</span>):</span><br><span class="line">    dayup = dayup * (<span class="number">1</span> + power)</span><br><span class="line">    daydown = daydown * (<span class="number">1</span> - power)</span><br><span class="line">print(dayup,daydown)</span><br></pre></td></tr></table></figure>
+<p>一年365天，一周5个工作日，如果每个工作日都很努力，可以提高1%，仅在周末放任一下，能力值下降1%，效果如何呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">daypower = <span class="number">1</span></span><br><span class="line">power = <span class="number">0.01</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">365</span> + <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">7</span> <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">6</span>]:</span><br><span class="line">        daypower = daypower * (<span class="number">1</span> - power)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        daypower = daypower * (<span class="number">1</span> + power)</span><br><span class="line">print(daypower)</span><br></pre></td></tr></table></figure>
+<h2 id="题目3：凯撒密码"><a href="#题目3：凯撒密码" class="headerlink" title="题目3：凯撒密码"></a>题目3：凯撒密码</h2><p>设想在某些情况下给朋友传递字条信息，但又不希望传递中途被第三方看懂这些信息，因此需要对字条信息进行加密处理。传统加密算法很多，这里介绍一种非常简单的加密算法——凯撒密码。顾名思义，凯撒密码是古罗马凯撒大帝用来对军事情报进行加密的算法，它采用了替换算法对信息中的每一个英文字符循环替换为该字符后面第三个字符，对应关系如下：</p>
+<p>原文：A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+<p>密文：D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</p>
+<p>假设用户可能使用的信息仅包括所有英文字母，编程计算密文。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">str = input(<span class="string">"请输入明文："</span>)</span><br><span class="line">answer = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str:</span><br><span class="line">    <span class="keyword">if</span> <span class="string">"a"</span> &lt;= i &lt;= <span class="string">"z"</span>:</span><br><span class="line">        answer = answer + chr((ord(i) - ord(<span class="string">"a"</span>) + <span class="number">3</span>)%<span class="number">26</span> + ord(<span class="string">"a"</span>))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">"A"</span> &lt;= i &lt;= <span class="string">"Z"</span>:</span><br><span class="line">        answer = answer + chr((ord(i) - ord(<span class="string">"A"</span>) + <span class="number">3</span>)%<span class="number">26</span> + ord(<span class="string">"A"</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = answer + i</span><br><span class="line">print(answer)</span><br></pre></td></tr></table></figure>
+<div class="note success">ord(“a”)表示字符a对应的acsii码，而chr(1)表示acsii码为1的字符。</div>
+
+<h2 id="题目4：文本进度条"><a href="#题目4：文本进度条" class="headerlink" title="题目4：文本进度条"></a>题目4：文本进度条</h2><p>进度条是计算机处理任务或执行软件中增强用户体验的重要手段，它能够实时显示任务或软件的执行进度，十分常用。</p>
+<p>编程实现如下图所示带刷新和时间监控的文本进度条：</p>
+<p>———–执行开始———-</p>
+<p> 0 %[-&gt;…………………………………………..]0.00s</p>
+<p> 2 %[*-&gt;………………………………………….]0.05s</p>
+<p> 4 %[**-&gt;…………………………………………]0.15s</p>
+<p> 6 %[<em>*</em>-&gt;………………………………………..]0.30s</p>
+<p> 8 %[*<em>*</em>-&gt;……………………………………….]0.50s</p>
+<p>10 %[**<em>*</em>-&gt;………………………………………]0.76s</p>
+<p>12 %[******-&gt;……………………………………..]1.06s</p>
+<p>14 %[****<em>*</em>-&gt;…………………………………….]1.41s</p>
+<p>16 %[*****<em>*</em>-&gt;……………………………………]1.82s</p>
+<p>18 %[******<em>*</em>-&gt;…………………………………..]2.27s</p>
+<p>20 %[*******<em>*</em>-&gt;………………………………….]2.78s</p>
+<p>……</p>
+<p>98 %[**********************************************<em>*</em>-&gt;.]61.95s</p>
+<p>100%[***********************************************<em>*</em>-&gt;]64.48s</p>
+<p>———–执行结束———-</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">scale = <span class="number">50</span></span><br><span class="line">print(<span class="string">"执行开始"</span>.center(scale//<span class="number">2</span>,<span class="string">"-"</span>))</span><br><span class="line">t = time.clock()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(scale+<span class="number">1</span>):</span><br><span class="line">    a = <span class="string">"*"</span> * i</span><br><span class="line">    b = <span class="string">"."</span> * (scale - i)</span><br><span class="line">    c = i/scale * <span class="number">100</span></span><br><span class="line">    t -= time.clock()</span><br><span class="line">    print(<span class="string">"\r&#123;:3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;]&#123;:.3f&#125;s"</span>.format(c,a,b,-t))<span class="comment"># 加上end=''之后可以动态更新</span></span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br><span class="line">print(<span class="string">"\n"</span> + <span class="string">"执行结束"</span>.center(scale//<span class="number">2</span>,<span class="string">"-"</span>))</span><br></pre></td></tr></table></figure>
+<div class="note success">进度条问题，关键是输出格式和循环次数</div>
+
+<h1 id="实验三-控制结构（分支）"><a href="#实验三-控制结构（分支）" class="headerlink" title="实验三 控制结构（分支）"></a>实验三 控制结构（分支）</h1><h2 id="题目1：身体质量指数BMI"><a href="#题目1：身体质量指数BMI" class="headerlink" title="题目1：身体质量指数BMI"></a>题目1：身体质量指数BMI</h2><p>BMI 值可以“客观的”衡量个人的肥胖程度或者说健康程度。世界卫生组织（WHO）根据对全球人口体重的统计认为，BMI 值低于18.5 kg/m2 时属于“过轻”，表明个体可能营养不良或者饮食无法保障；BMI 值高于25 kg/m2 时属于“过重”。根据下表所示指标编程测试 自己的身体指数状况。</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>国际BMI值</th>
+<th>国内MBI值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>偏瘦</td>
+<td>&lt; 18.5</td>
+<td>&lt; 18.5</td>
+</tr>
+<tr>
+<td>正常</td>
+<td>18.5 ~ 25</td>
+<td>18.5 ~ 24</td>
+</tr>
+<tr>
+<td>偏胖</td>
+<td>25 ~ 30</td>
+<td>24 ~ 28</td>
+</tr>
+<tr>
+<td>肥胖</td>
+<td>> = 30</td>
+<td>>= 28</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">height = eval(input(<span class="string">"请输入你的身高（单位m）："</span>))</span><br><span class="line">weight = eval(input(<span class="string">"请输入你的体重（单位：kg）："</span>))</span><br><span class="line">BMI = weight / pow(height, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">if</span> BMI &lt; <span class="number">18.5</span>:</span><br><span class="line">    national = <span class="string">"偏瘦"</span></span><br><span class="line"><span class="keyword">elif</span> BMI &lt; <span class="number">25</span>:</span><br><span class="line">    national = <span class="string">"正常"</span></span><br><span class="line"><span class="keyword">elif</span> BMI &lt; <span class="number">30</span>:</span><br><span class="line">    national = <span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    national = <span class="string">"肥胖"</span></span><br><span class="line"><span class="keyword">if</span> BMI &lt; <span class="number">18.5</span>:</span><br><span class="line">    domestic = <span class="string">"偏瘦"</span></span><br><span class="line"><span class="keyword">elif</span> BMI &lt; <span class="number">24</span>:</span><br><span class="line">    domestic = <span class="string">"正常"</span></span><br><span class="line"><span class="keyword">elif</span> BMI &lt; <span class="number">28</span>:</span><br><span class="line">    domestic =<span class="string">"偏胖"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    domestic = <span class="string">"肥胖"</span></span><br><span class="line">print(<span class="string">"BMI值为："</span>,BMI)</span><br><span class="line">print(<span class="string">"国际指数表明&#123;&#125;，国内指数表明&#123;&#125;"</span>.format(national,domestic))</span><br></pre></td></tr></table></figure>
+<h2 id="题目2：学生成绩等级判断"><a href="#题目2：学生成绩等级判断" class="headerlink" title="题目2：学生成绩等级判断"></a>题目2：学生成绩等级判断</h2><p>编程实现输入学生成绩score，得出其等级状况grade,其对应关系如下： </p>
+<p>Score&gt;=85       grade=”A” </p>
+<p>70&lt;=Score&lt;85    grade=”B” </p>
+<p>60&lt;=Score&lt;70    grade=”C” </p>
+<p>Score&lt;60        grade=”D” </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">score = eval(input(<span class="string">"请输入学生成绩："</span>))</span><br><span class="line">grade = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> score &gt;= <span class="number">85</span>:</span><br><span class="line">    grade = <span class="string">"A"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">70</span> &lt;= score &lt;= <span class="number">85</span>:</span><br><span class="line">    grade = <span class="string">"B"</span></span><br><span class="line"><span class="keyword">elif</span> <span class="number">60</span> &lt;= score &lt;= <span class="number">70</span>:</span><br><span class="line">    grade = <span class="string">"C"</span></span><br><span class="line"><span class="keyword">elif</span> score &lt; <span class="number">60</span>:</span><br><span class="line">    grade = <span class="string">"D"</span></span><br><span class="line">print(grade)</span><br></pre></td></tr></table></figure>
+<h2 id="题目3：猜数游戏"><a href="#题目3：猜数游戏" class="headerlink" title="题目3：猜数游戏"></a>题目3：猜数游戏</h2><p>在程序中预设一个0-9 之间的整数，让用户通过键盘输入所猜的数，如果大于预设的 数，显示“遗憾，太大了”；小于预设的数，显示“遗憾，太小了”，如此循环，直到猜中该数，显示“预测N 次，你猜中了！”，其中N 是用户输入的数字次数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">number = random.randint(<span class="number">0</span>,<span class="number">9</span>)</span><br><span class="line">print(<span class="string">"正确的数值是："</span>,number)</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    count = count + <span class="number">1</span></span><br><span class="line">    guess = eval(input(<span class="string">"请输入你猜的数值："</span>))</span><br><span class="line">    <span class="keyword">if</span> guess &gt; number:</span><br><span class="line">        print(<span class="string">"遗憾，太大了！"</span>)</span><br><span class="line">    <span class="keyword">elif</span> guess &lt; number:</span><br><span class="line">        print(<span class="string">"遗憾，太小了！"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"恭喜，猜对了！你一共猜了&#123;&#125;次"</span>.format(count))</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h1 id="实验四-控制结构（循环）"><a href="#实验四-控制结构（循环）" class="headerlink" title="实验四 控制结构（循环）"></a>实验四 控制结构（循环）</h1><h2 id="题目1：统计不同字符个数"><a href="#题目1：统计不同字符个数" class="headerlink" title="题目1：统计不同字符个数"></a>题目1：统计不同字符个数</h2><p>用户从键盘输入一行字符，编写一个程序，统计并输出其中英文字符、数字、空格和其它字符的个数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">str = input(<span class="string">"请输入一串字符串："</span>)</span><br><span class="line">count1 = <span class="number">0</span></span><br><span class="line">count2 = <span class="number">0</span></span><br><span class="line">count3 = <span class="number">0</span></span><br><span class="line">count4 = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str:</span><br><span class="line">    <span class="keyword">if</span> ord(<span class="string">"a"</span>) &lt;= ord(i) &lt;= ord(<span class="string">"z"</span>) <span class="keyword">or</span> ord(<span class="string">"A"</span>) &lt;= ord(i) &lt;= ord(<span class="string">"Z"</span>):</span><br><span class="line">        count1 = count1 + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> ord(<span class="string">"0"</span>) &lt;= ord(i) &lt;= ord(<span class="string">"9"</span>):</span><br><span class="line">        count2 = count2 + <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> i == <span class="string">' '</span>:</span><br><span class="line">        count3 = count3 + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        count4 = count4 + <span class="number">1</span></span><br><span class="line">print(<span class="string">"字母的个数是&#123;&#125;，数字的个数是&#123;&#125;，空格的个数是&#123;&#125;，其他类型的字符个数是&#123;&#125;"</span></span><br><span class="line">      .format(count1,count2,count3,count4))</span><br></pre></td></tr></table></figure>
+<h2 id="题目2：猜数游戏续"><a href="#题目2：猜数游戏续" class="headerlink" title="题目2：猜数游戏续"></a>题目2：猜数游戏续</h2><p>在上一次猜游戏实验题目的基础上，完善程序，实现如下的功能：</p>
+<p>系统自动生成1-100以内的随机整数，让用户通过键盘输入所猜的数，如果大于预设的数，显示“遗憾，太大了”；小于预设的数，显示“遗憾，太小了”，如此循环，直到猜中该数，显示“预测N次，你猜中了！”，其中N是用户输入的数字次数。</p>
+<p>如果用户输入的不是整数，而是小数，则提示用户“输入错误，必须输入整数！”，并让用户重新输入。如果用户输入的不是数字，则给出出错提示“输入格式错误，结束程序！”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">number = random.randint(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line">print(<span class="string">"正确的数值是："</span>,number)</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    count = count + <span class="number">1</span></span><br><span class="line">    guess = input(<span class="string">"请输入你猜的数值："</span>)</span><br><span class="line">    <span class="keyword">if</span> guess.isalpha():</span><br><span class="line">        print(<span class="string">"输入格式错误，结束程序！"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    guess = eval(guess)</span><br><span class="line">    <span class="keyword">if</span> int(guess) == guess:</span><br><span class="line">        <span class="keyword">if</span> guess &gt; number:</span><br><span class="line">            print(<span class="string">"遗憾，太大了！"</span>)</span><br><span class="line">        <span class="keyword">elif</span> guess &lt; number:</span><br><span class="line">            print(<span class="string">"遗憾，太小了！"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"恭喜，猜对了！你一共猜了&#123;&#125;次"</span>.format(count))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"输入错误，必须输入整数！"</span>)</span><br></pre></td></tr></table></figure>
+<div class="note success">str.isalpha()：如果字符串至少有一个字符并且所有字符都是字母则返回 True,否则返回 False </div>
+
+<h2 id="题目3：最大公约数计算"><a href="#题目3：最大公约数计算" class="headerlink" title="题目3：最大公约数计算"></a>题目3：最大公约数计算</h2><p>从键盘接收两个整数，编写程序求出这两个整数的最大公约数和最小公倍数（提示：用辗转相除法求最大公约数，用两数乘积除以最大公约数求得最小公倍数）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">num1 = eval(input(<span class="string">"请输入第一个数："</span>))</span><br><span class="line">num2 = eval(input(<span class="string">"请输入第二个数："</span>))</span><br><span class="line">m = max(num1,num2)</span><br><span class="line">n = min(num1,num2)</span><br><span class="line">r = m % n</span><br><span class="line"><span class="keyword">while</span> r != <span class="number">0</span>:</span><br><span class="line">    m = n</span><br><span class="line">    n = r</span><br><span class="line">    r = m % n</span><br><span class="line">print(<span class="string">"&#123;&#125;和&#123;&#125;的最大公约数是&#123;&#125;"</span>.format(num1, num2, n))</span><br><span class="line">print(<span class="string">"&#123;&#125;和&#123;&#125;的最小公倍数数是&#123;&#125;"</span>.format(num1, num2, (num1 * num2)/n))</span><br></pre></td></tr></table></figure>
+<h2 id="题目4：数字金字塔"><a href="#题目4：数字金字塔" class="headerlink" title="题目4：数字金字塔"></a>题目4：数字金字塔</h2><p>请编写程序实现如下数字金字塔的显示：</p>
+<p><img src="https://i.loli.net/2018/11/26/5bfbeee45abb1.png" alt="数字.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    st = <span class="string">""</span></span><br><span class="line">    j = i</span><br><span class="line">    <span class="keyword">while</span> j &gt; <span class="number">1</span>:</span><br><span class="line">        st = st + str(j)</span><br><span class="line">        j -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        st = st + str(j)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    print(st.center(<span class="number">17</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="实验五-组合数据类型"><a href="#实验五-组合数据类型" class="headerlink" title="实验五 组合数据类型"></a>实验五 组合数据类型</h1><h2 id="题目1：密码生成"><a href="#题目1：密码生成" class="headerlink" title="题目1：密码生成"></a>题目1：密码生成</h2><p>编写程序，在 26 个字母大小写和 9 个数字组成的列表中随机生成 10个8位密码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">num1 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'0'</span>),ord(<span class="string">'9'</span>)+<span class="number">1</span>)]</span><br><span class="line">num2 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'a'</span>),ord(<span class="string">'z'</span>)+<span class="number">1</span>)]</span><br><span class="line">num3 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'A'</span>),ord(<span class="string">'Z'</span>)+<span class="number">1</span>)]</span><br><span class="line">num = num1 + num2 + num3</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    code = random.sample(num,<span class="number">8</span>)</span><br><span class="line">    print(<span class="string">''</span>.join(code))</span><br></pre></td></tr></table></figure>
+<div class="note success">random.sample()函数，从指定的list中随机选取指定长度的元素。<br><br>str.join(list)表示list中间用str连接</div>
+
+<h2 id="题目2：排序"><a href="#题目2：排序" class="headerlink" title="题目2：排序"></a>题目2：排序</h2><p>通过键盘输入系列整数值，输入 0 则表示输入结束，将这些值（不含 0）建立为一个列表，并按从大到小的顺序输出该列表各元素。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List = []</span><br><span class="line">number = eval(input(<span class="string">"input number:"</span>))</span><br><span class="line">List.append(number)</span><br><span class="line"><span class="keyword">while</span> number != <span class="number">0</span>:</span><br><span class="line">    number = eval(input(<span class="string">"input number:"</span>))</span><br><span class="line">    List.append(number)</span><br><span class="line">List.sort(reverse=<span class="number">1</span>)</span><br><span class="line">print(List)</span><br></pre></td></tr></table></figure>
+<div class="note success">sort函数用于排序，默认是从小到大排序，reverse=1表示从大到小排序。</div>
+
+<h2 id="题目3：输出素数"><a href="#题目3：输出素数" class="headerlink" title="题目3：输出素数"></a>题目3：输出素数</h2><p>输入一个大于 2 的自然数， 输出小于该数字的所有素数组成的集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prim</span><span class="params">(number)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,number):</span><br><span class="line">        <span class="keyword">if</span> number % i ==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">number = eval(input(<span class="string">"请输入一个大于2的数："</span>))</span><br><span class="line">numbers = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,number):</span><br><span class="line">    <span class="keyword">if</span> prim(i):</span><br><span class="line">        numbers.append(i)</span><br><span class="line">print(numbers)</span><br></pre></td></tr></table></figure>
+<h2 id="题目4：英文电话号码"><a href="#题目4：英文电话号码" class="headerlink" title="题目4：英文电话号码"></a>题目4：英文电话号码</h2><p>使用字典来创建程序，提示用户输入电话号码，并用英文单词形式显示数字。例如：输入138则显示“one three eight”。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Getdict</span><span class="params">(phone)</span>:</span></span><br><span class="line">    a = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">    b = [<span class="string">'zero'</span>,<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>,<span class="string">'four'</span>,<span class="string">'five'</span>,<span class="string">'six'</span>,<span class="string">'seven'</span>,<span class="string">'eight'</span>,<span class="string">'nine'</span>]</span><br><span class="line">    mydict = dict(zip(a,b))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> phone:</span><br><span class="line">        print(mydict[int(i)],end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">phone = input(<span class="string">"请输入电话号码："</span>)</span><br><span class="line">Getdict(phone)</span><br></pre></td></tr></table></figure>
+<div class="note success">dict(zip(a,b))方法可以把a和b两个list的键和值转换为字典。<br><br>print()函数默认输出后换行，如果想以其他形式结尾，可以使用end=‘ ’，表示用空格结尾。</div>
+
+<h1 id="实验六-综合"><a href="#实验六-综合" class="headerlink" title="实验六 综合"></a>实验六 综合</h1><h2 id="题目1：抓狐狸游戏"><a href="#题目1：抓狐狸游戏" class="headerlink" title="题目1：抓狐狸游戏"></a>题目1：抓狐狸游戏</h2><p>编写程序，模拟抓狐狸小游戏。假设一共有一排5个洞口，小狐狸最开始的时候在其中一个洞口，然后玩家随机打开一个洞口，如果里面有狐狸就抓到了。如果洞口里没有狐狸就第二天再来抓， 但是第二天狐狸会在玩家来抓之前跳到隔壁洞口里。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">hole = random.randint(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line">print(<span class="string">"狐狸现在在&#123;&#125;号洞口"</span>.format(hole))</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    guess = eval(input(<span class="string">"请选择洞口编号："</span>))</span><br><span class="line">    <span class="keyword">if</span> guess == hole:</span><br><span class="line">        print(<span class="string">"恭喜你，抓到狐狸了！"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"猜错啦，再给你一次机会吧！"</span>)</span><br><span class="line">        hole = hole + <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> hole == <span class="number">6</span>:</span><br><span class="line">            hole = <span class="number">0</span></span><br><span class="line">        print(<span class="string">"狐狸现在在&#123;&#125;号洞口"</span>.format(hole))</span><br></pre></td></tr></table></figure>
+<h1 id="实验七-函数"><a href="#实验七-函数" class="headerlink" title="实验七 函数"></a>实验七 函数</h1><h2 id="题目1：求和"><a href="#题目1：求和" class="headerlink" title="题目1：求和"></a>题目1：求和</h2><p>定义求 n! 的函数fact()和求和函数sum(),在此基础上编程实现 1！+2！+…m!的计算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fact</span><span class="params">(n)</span>:</span></span><br><span class="line">    answer = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        answer = answer * i</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(number_list)</span>:</span></span><br><span class="line">    s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> number_list:</span><br><span class="line">        s = s + fact(i)</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">m = eval(input(<span class="string">"请输入m："</span>))</span><br><span class="line">number_list = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,m+<span class="number">1</span>)]</span><br><span class="line">print(sum(number_list))</span><br></pre></td></tr></table></figure>
+<h2 id="题目2：匿名函数求平方"><a href="#题目2：匿名函数求平方" class="headerlink" title="题目2：匿名函数求平方"></a>题目2：匿名函数求平方</h2><p>定义匿名函数实现求平方，定义判素数函数 list_prime(),该函数可以实现接受任意个数的判断，并将所有素数作为返回值。在此基础上编程实现随机输入任意个数，从中挑选出所有素数，并计算所有素数平方和。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prim_list</span><span class="params">(ls)</span>:</span></span><br><span class="line">    prim = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> ls:</span><br><span class="line">        flag = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">2</span>,i):</span><br><span class="line">            <span class="keyword">if</span> i % j ==<span class="number">0</span>:</span><br><span class="line">                flag = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">            prim.append(i)</span><br><span class="line">    <span class="keyword">return</span> prim</span><br><span class="line"></span><br><span class="line">my_list = prim_list([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">13</span>])</span><br><span class="line">print(my_list)</span><br><span class="line">square = <span class="keyword">lambda</span> x:x * x</span><br><span class="line">sum = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> my_list:</span><br><span class="line">    sum = sum + square(i)</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+<div class="note success">普通函数的关键字是def，而匿名函数的关键字是lambda，匿名函数没有函数名，这里，<code>lambda x: x * x</code> 是 lambda 函数，其中 x 是参数，<code>x * x</code> 是表达式。<br><br>这个函数没有名字，它返回一个函数对象，该对象被分配给变量 square，可以将其作为一个正常的函数来调用。</div>
+
+<h2 id="题目3：字母表字典"><a href="#题目3：字母表字典" class="headerlink" title="题目3：字母表字典"></a>题目3：字母表字典</h2><p>分别定义 numlist()和 charlist()函数，numlist()功能是生成由数字1-26 构成的列表,charlist()功能是生成由字符 A-Z 构成的列表。在此基础上编写程序实现生成一个字典，具体如下：<br>{1: ‘a’, 2: ‘b’, 3: ‘c’, 4: ‘d’, 5: ‘e’, 6: ‘f’, 7: ‘g’, 8: ‘h’, 9: ‘i’, 10: ‘j’, 11: ‘k’, 12: ‘l’, 13: ‘m’, 14: ‘n’, 15: ‘o’, 16: ‘p’, 17: ‘q’, 18: ‘r’, 19: ‘s’, 20: ‘t’, 21: ‘u’, 22: ‘v’, 23: ‘w’, 24: ‘x’, 25: ‘y’, 26: ‘z’}<br>遍历字典，输出所有键值为偶数的元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">num_list</span><span class="params">()</span>:</span></span><br><span class="line">    numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">27</span>)]</span><br><span class="line">    <span class="keyword">return</span> numbers</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">char_list</span><span class="params">()</span>:</span></span><br><span class="line">    chars = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'a'</span>),ord(<span class="string">'z'</span>)+<span class="number">1</span>)]</span><br><span class="line">    <span class="keyword">return</span> chars</span><br><span class="line"></span><br><span class="line">english_list = dict(zip(num_list(),char_list()))</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> english_list.items():</span><br><span class="line">    <span class="keyword">if</span> key % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(value,end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+<div class="note success">字典的循环，需要使用english_list.items()迭代遍历。</div>
+
+<h1 id="实验八-文件与数据格式化"><a href="#实验八-文件与数据格式化" class="headerlink" title="实验八 文件与数据格式化"></a>实验八 文件与数据格式化</h1><h2 id="题目1：svc转json"><a href="#题目1：svc转json" class="headerlink" title="题目1：svc转json"></a>题目1：svc转json</h2><p>将提供的 test.csv 文件，具体内容如下：</p>
+<p>编程读入该文件，转换成 JSON 格式文件，并以文件名 out.json 输出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">csvfile = open(<span class="string">'test.csv'</span>,<span class="string">'r'</span>)</span><br><span class="line">jsonfile = open(<span class="string">'file.json'</span>,<span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">reader = csv.DictReader(csvfile)</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> reader:</span><br><span class="line">    <span class="comment"># print(row)</span></span><br><span class="line">    json.dump(row,jsonfile,ensure_ascii=<span class="keyword">False</span>)</span><br><span class="line">    jsonfile.write(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<div class="note success">csv.DictReader(csvfile)这个函数可以直接将CSV文档读取为字典的形式。<br><br>json.dump(row,jsonfile,ensure_ascii=False)这个函数用于将python对象编码成JSON字符串，第一个参数是python对象，第二个参数是文件名，第三个是编码格式，必须要使用ensure_ascii=False，否则会有乱码。</div>
+
+
+
+<h2 id="题目2：制作英文学习字典"><a href="#题目2：制作英文学习字典" class="headerlink" title="题目2：制作英文学习字典"></a>题目2：制作英文学习字典</h2><p>编写程序制作英文学习字典，词典基本功能如下：<br>(1) 程序读取源文件路径下的 txt 格式词典文件，若没有就创建一个。 词典文件存储方式为 “英文单词 中文单词”,每行仅有一对中英文释义。<br>(2) 程序有添加功能，输入英文单词，如果没有可以添加中文释义，如果有就显示”已经存在，不能添加”<br>(3) 程序有查询功能，如果存在，则显示其中文释义，不存在就显示不存在<br>(4) 程序有正常退出的操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PrintAll</span><span class="params">()</span>:</span></span><br><span class="line">    file = open(<span class="string">'dict.txt'</span>,<span class="string">'r+'</span>)</span><br><span class="line">    lines = file.readlines()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        print(line)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">WriteWords</span><span class="params">(word,explain)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'dict.txt'</span>,<span class="string">'r+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = f.readlines()</span><br><span class="line">        f.close()</span><br><span class="line">    file = open(<span class="string">'dict.txt'</span>,<span class="string">'a'</span>)</span><br><span class="line">    flag = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        li = re.findall(word,line)</span><br><span class="line">        <span class="keyword">if</span> len(li) &gt; <span class="number">0</span>:</span><br><span class="line">            flag = <span class="number">1</span></span><br><span class="line">            print(<span class="string">"已经存在，不能添加！"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag == <span class="number">0</span>:</span><br><span class="line">        file.write(<span class="string">"\n"</span> + word + <span class="string">" "</span> + explain)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FindWord</span><span class="params">(word)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'dict.txt'</span>,<span class="string">'r+'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        lines = file.readlines()</span><br><span class="line">    flag = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        li = re.findall(word,line)</span><br><span class="line">        <span class="keyword">if</span> len(li) &gt; <span class="number">0</span>:</span><br><span class="line">            flag = <span class="number">1</span></span><br><span class="line">            print(line)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag == <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"该单词不存在！"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"1.打印整个词典\n2.写入新单词\n3.查找单词\n4.退出"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        op = eval(input(<span class="string">"请选择:"</span>))</span><br><span class="line">        <span class="keyword">if</span> op == <span class="number">1</span>:</span><br><span class="line">            PrintAll()</span><br><span class="line">        <span class="keyword">if</span> op == <span class="number">2</span>:</span><br><span class="line">            word = input(<span class="string">"请输入单词:"</span>)</span><br><span class="line">            explain = input(<span class="string">"请输入解释:"</span>)</span><br><span class="line">            WriteWords(word,explain)</span><br><span class="line">        <span class="keyword">if</span> op == <span class="number">3</span>:</span><br><span class="line">            word = input(<span class="string">"请输入单词:"</span>)</span><br><span class="line">            FindWord(word)</span><br><span class="line">        <span class="keyword">if</span> op == <span class="number">4</span>:</span><br><span class="line">            print(<span class="string">"再见！"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<div class="note success">file = open(‘dict.txt’,’r+’)这个函数用于读取txt文件，“r+”模式是读写模式，“a”是追加模式，如果直接写入的话，会清楚原来的文件然后重新写，用“a”模式就不会清楚文件以前的内容。<br><br>lines = file.readlines()返回的是一个字符串list，可以逐一遍历每一行。<br><br>re.findall(str1,str2)是正则匹配，在str2中寻找str1，返回一个子串，如果长度为0代表子串不存在。</div>
+
+<h1 id="大作业"><a href="#大作业" class="headerlink" title="大作业"></a>大作业</h1><h2 id="题目1：打地鼠"><a href="#题目1：打地鼠" class="headerlink" title="题目1：打地鼠"></a>题目1：打地鼠</h2><p>编写程序，模拟打地鼠游戏。假设一共 8 个洞口，地鼠最开始的时候随机出现在其中一个洞口，然后玩家随机打开一个洞口。其中每轮打地鼠结果描述如下：</p>
+<p>（1） 如果里面有地鼠就打到了，游戏结束。</p>
+<p>（2） 如果洞口里没有地鼠就计算离打到地鼠还距离几个洞口，如果相差 1 个洞口，就提示“很遗憾，就差一点”，然后开始第二轮打地鼠；如果相差 2 个及以上洞口的话，就再给一次打的机会，打到游戏结束，没打到则开始第下一轮打地鼠。</p>
+<p>（3） 下一轮再打时， 地鼠会在玩家再次打之前随机跳到某个洞口里。</p>
+<p> 其它要求：</p>
+<p>（1） 游戏总共提供 10 次机会，编写进度条展示游戏进行的情况。</p>
+<p>（2） 每轮初始输入洞口号需要进行合法性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">game</span><span class="params">()</span>:</span></span><br><span class="line">    right = random.randint(<span class="number">1</span>,<span class="number">8</span>)</span><br><span class="line">    print(<span class="string">"地鼠现在在&#123;&#125;号洞口"</span>.format(right))</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        guess = input(<span class="string">"请输入洞口号："</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> eval(guess) == right:</span><br><span class="line">                print(<span class="string">"恭喜你打到地鼠了！游戏结束！"</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> eval(guess) - right == <span class="number">1</span> <span class="keyword">or</span> right - eval(guess) == <span class="number">1</span>:</span><br><span class="line">                print(<span class="string">"很遗憾，就差一点了！即将进入下一局！"</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">"没打到哦，再给你一次机会吧！"</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">"你输入的数据不合法！请重新输入"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    scale = <span class="number">10</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">        a = <span class="string">'*'</span> * i</span><br><span class="line">        b = <span class="string">'-'</span> * (scale - i)</span><br><span class="line">        c = i/(scale) * <span class="number">100</span></span><br><span class="line">        print(<span class="string">"[&#123;&#125;-&gt;&#123;&#125;]&#123;&#125;%"</span>.format(a,b,c))</span><br><span class="line">        print(<span class="string">"这是第&#123;&#125;次游戏"</span>.format(i).center(<span class="number">20</span>,<span class="string">'-'</span>))</span><br><span class="line">        game()</span><br><span class="line">        print(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="题目2：打印杨辉三角形"><a href="#题目2：打印杨辉三角形" class="headerlink" title="题目2：打印杨辉三角形"></a>题目2：打印杨辉三角形</h2><p>杨辉三角形通常从第 0 行开始枚举，并且每一行的数字是上一行相邻两个数字的和。简单的杨辉三角形可以由以下方式产生：在第 0 行只写一个数字 1，然后构造下一行的元素。将上一行中数字左侧上方和右侧上方的数值相加。如果左侧上方或右侧上方数字不存在，用 0代替。例如，第一行的第一个数字是 0+1=1，而第三行的数字 1 和 3 相加得到在第 4 行的数字 4，下面给出 6 行的杨辉三角形。</p>
+<p>1</p>
+<p>1 1</p>
+<p>1 2 1</p>
+<p>1 3 3 1</p>
+<p>1 4 6 4 1</p>
+<p>1 5 10 10 5 1</p>
+<p>编写程序：提示输入杨辉三角形的高度，然后生成和上面例子一样风格的三角形并打印输出。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangles</span><span class="params">()</span>:</span></span><br><span class="line">    a = [<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        a=[sum(i) <span class="keyword">for</span> i <span class="keyword">in</span> zip([<span class="number">0</span>] + a,a + [<span class="number">0</span>])]</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> a:</span><br><span class="line">            print(x,end=<span class="string">' '</span>) <span class="comment"># 每个数中间用空格隔开</span></span><br><span class="line">        print(<span class="string">""</span>)<span class="comment"># 换行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    g=triangles()</span><br><span class="line">    number = eval(input(<span class="string">"请输入杨辉三角形的高度:"</span>))</span><br><span class="line">    <span class="keyword">if</span> number &gt; <span class="number">1</span>:</span><br><span class="line">        print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(number):</span><br><span class="line">        next(g)</span><br></pre></td></tr></table></figure>
+<h2 id="题目3：密码"><a href="#题目3：密码" class="headerlink" title="题目3：密码"></a>题目3：密码</h2><p>编写程序模拟验证码的验证过程，具体要求如下：</p>
+<p>（1）程序从 26 个大小写英文字母和 10 个数字中随机生成长度为 4 的验证码。</p>
+<p>（2）显示当前的验证码，并请用户输入；如果输入正确，则提示验证成功，退出程序；否则重新生成验证码，提示用户重新输入。如果验证错误次数大于等于 3 次，则提示用户验证失败，退出程序。</p>
+<p>要求：随机验证码的生成用函数实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">code</span><span class="params">()</span>:</span></span><br><span class="line">    code1 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'a'</span>),ord(<span class="string">'z'</span>))]</span><br><span class="line">    code2 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'A'</span>),ord(<span class="string">'Z'</span>))]</span><br><span class="line">    code3 = [chr(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(ord(<span class="string">'0'</span>),ord(<span class="string">'9'</span>))]</span><br><span class="line">    codes = code1 + code2 + code3</span><br><span class="line">    p = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        j = random.randint(<span class="number">0</span>,len(codes)<span class="number">-1</span>)</span><br><span class="line">        p = p + codes[j]</span><br><span class="line">    <span class="keyword">return</span> p</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    right = code()</span><br><span class="line">    print(<span class="string">"验证码为[&#123;&#125;]"</span>.format(right))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        answer = input(<span class="string">"请输入验证码："</span>)</span><br><span class="line">        <span class="keyword">if</span> answer == right:</span><br><span class="line">            print(<span class="string">"验证成功！"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> answer != right:</span><br><span class="line">            print(<span class="string">"验证失败，请重新输入！"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="题目4：凯撒密码升级完整版"><a href="#题目4：凯撒密码升级完整版" class="headerlink" title="题目4：凯撒密码升级完整版"></a>题目4：凯撒密码升级完整版</h2><p>分别定义解码和编码的函数，增加移位数的选择，增加退出功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">incoding</span><span class="params">(origin,k)</span>:</span></span><br><span class="line">    code = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> origin:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'a'</span> &lt;= word &lt;= <span class="string">'z'</span>:</span><br><span class="line">            word = chr((ord(word) - ord(<span class="string">'a'</span>) + k) % <span class="number">26</span> + ord(<span class="string">'a'</span>))</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'A'</span> &lt;= word &lt;= <span class="string">'Z'</span>:</span><br><span class="line">            word = chr((ord(word) - ord(<span class="string">'A'</span>) + k) % <span class="number">26</span> + ord(<span class="string">'A'</span>))</span><br><span class="line">        code = code + word</span><br><span class="line">    <span class="keyword">return</span> code</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decoding</span><span class="params">(code,k)</span>:</span></span><br><span class="line">    origin = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> code:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'a'</span> &lt;= word &lt;= <span class="string">'z'</span>:</span><br><span class="line">            word = chr((ord(word) - ord(<span class="string">'a'</span>) - k) % <span class="number">26</span> + ord(<span class="string">'a'</span>))</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'A'</span> &lt;= word &lt;= <span class="string">'Z'</span>:</span><br><span class="line">            word = chr((ord(word) - ord(<span class="string">'A'</span>) - k) % <span class="number">26</span> + ord(<span class="string">'A'</span>))</span><br><span class="line">        origin = origin + word</span><br><span class="line">    <span class="keyword">return</span> origin</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        print(<span class="string">"1.加密\n2.解密\n3.退出"</span>)</span><br><span class="line">        op = eval(input(<span class="string">"请选择："</span>))</span><br><span class="line">        <span class="keyword">if</span> op == <span class="number">1</span>:</span><br><span class="line">            origin = input(<span class="string">"请输入待加密的字符串："</span>)</span><br><span class="line">            k = eval(input(<span class="string">"请输入移位的个数："</span>))</span><br><span class="line">            print(<span class="string">"加密后的密文是：&#123;&#125;"</span>.format(incoding(origin,k)))</span><br><span class="line">        <span class="keyword">elif</span> op == <span class="number">2</span>:</span><br><span class="line">            code = input(<span class="string">"请输入密文："</span>)</span><br><span class="line">            k = eval(input(<span class="string">"请输入移位的个数："</span>))</span><br><span class="line">            print(<span class="string">"解密后的原文是：&#123;&#125;"</span>.format(decoding(code,k)))</span><br><span class="line">        <span class="keyword">elif</span> op == <span class="number">3</span>:</span><br><span class="line">            print(<span class="string">"再见！"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"请选择正确的编号！"</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+	
+    
+
+    
+
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-anchor"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" <i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/21/JMeter-压力测试教程/" rel="next" title="JMeter 压力测试教程">
+                <i class="fa fa-chevron-left"></i> JMeter 压力测试教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODY1NC8xNTE4Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.JPG"
+                alt="cici" />
+            
+              <p class="site-author-name" itemprop="name">cici</p>
+              <p class="site-description motion-element" itemprop="description">Python is the best language!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://willardtm.github.io/" title="Willard" target="_blank">Willard</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://haima515.github.io/" title="海马" target="_blank">海马</a>
+                  </li>
+                
+              </ul>
+			<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("04/18/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已萌萌哒运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+            </div>
+          
+
+          <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("04/18/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已萌萌哒运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验一-Python环境及基础"><span class="nav-number">1.</span> <span class="nav-text">实验一 Python环境及基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：字符串拼接"><span class="nav-number">1.1.</span> <span class="nav-text">题目1：字符串拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：整数序列求和"><span class="nav-number">1.2.</span> <span class="nav-text">题目2：整数序列求和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：健康食谱输出"><span class="nav-number">1.3.</span> <span class="nav-text">题目3：健康食谱输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目4：太阳花的绘制"><span class="nav-number">1.4.</span> <span class="nav-text">题目4：太阳花的绘制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验二-字符串运算及字符串格式化"><span class="nav-number">2.</span> <span class="nav-text">实验二 字符串运算及字符串格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：格式化输出字符串堆积的三角形"><span class="nav-number">2.1.</span> <span class="nav-text">题目1：格式化输出字符串堆积的三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：天天向上"><span class="nav-number">2.2.</span> <span class="nav-text">题目2：天天向上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：凯撒密码"><span class="nav-number">2.3.</span> <span class="nav-text">题目3：凯撒密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目4：文本进度条"><span class="nav-number">2.4.</span> <span class="nav-text">题目4：文本进度条</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验三-控制结构（分支）"><span class="nav-number">3.</span> <span class="nav-text">实验三 控制结构（分支）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：身体质量指数BMI"><span class="nav-number">3.1.</span> <span class="nav-text">题目1：身体质量指数BMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：学生成绩等级判断"><span class="nav-number">3.2.</span> <span class="nav-text">题目2：学生成绩等级判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：猜数游戏"><span class="nav-number">3.3.</span> <span class="nav-text">题目3：猜数游戏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验四-控制结构（循环）"><span class="nav-number">4.</span> <span class="nav-text">实验四 控制结构（循环）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：统计不同字符个数"><span class="nav-number">4.1.</span> <span class="nav-text">题目1：统计不同字符个数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：猜数游戏续"><span class="nav-number">4.2.</span> <span class="nav-text">题目2：猜数游戏续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：最大公约数计算"><span class="nav-number">4.3.</span> <span class="nav-text">题目3：最大公约数计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目4：数字金字塔"><span class="nav-number">4.4.</span> <span class="nav-text">题目4：数字金字塔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验五-组合数据类型"><span class="nav-number">5.</span> <span class="nav-text">实验五 组合数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：密码生成"><span class="nav-number">5.1.</span> <span class="nav-text">题目1：密码生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：排序"><span class="nav-number">5.2.</span> <span class="nav-text">题目2：排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：输出素数"><span class="nav-number">5.3.</span> <span class="nav-text">题目3：输出素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目4：英文电话号码"><span class="nav-number">5.4.</span> <span class="nav-text">题目4：英文电话号码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验六-综合"><span class="nav-number">6.</span> <span class="nav-text">实验六 综合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：抓狐狸游戏"><span class="nav-number">6.1.</span> <span class="nav-text">题目1：抓狐狸游戏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验七-函数"><span class="nav-number">7.</span> <span class="nav-text">实验七 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：求和"><span class="nav-number">7.1.</span> <span class="nav-text">题目1：求和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：匿名函数求平方"><span class="nav-number">7.2.</span> <span class="nav-text">题目2：匿名函数求平方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：字母表字典"><span class="nav-number">7.3.</span> <span class="nav-text">题目3：字母表字典</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验八-文件与数据格式化"><span class="nav-number">8.</span> <span class="nav-text">实验八 文件与数据格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：svc转json"><span class="nav-number">8.1.</span> <span class="nav-text">题目1：svc转json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：制作英文学习字典"><span class="nav-number">8.2.</span> <span class="nav-text">题目2：制作英文学习字典</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大作业"><span class="nav-number">9.</span> <span class="nav-text">大作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1：打地鼠"><span class="nav-number">9.1.</span> <span class="nav-text">题目1：打地鼠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目2：打印杨辉三角形"><span class="nav-number">9.2.</span> <span class="nav-text">题目2：打印杨辉三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目3：密码"><span class="nav-number">9.3.</span> <span class="nav-text">题目3：密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目4：凯撒密码升级完整版"><span class="nav-number">9.4.</span> <span class="nav-text">题目4：凯撒密码升级完整版</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cici</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  总访问量<span id="busuanzi_value_site_pv"></span>	&#8194;|&#8194;</span>
+  访客数<span id="busuanzi_value_site_uv"></span>	&#8194;|&#8194;</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#8194;|&#8194;博客全站共62.0k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

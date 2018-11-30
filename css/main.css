@@ -1876,7 +1876,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #98c499;
+  background: #c6cff0;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3438,4 +3438,13 @@ p#div-border-top-purple {
   color: #07b39b;
   font-size: 13px;
   margin-top: 15px;
+}
+img#github-emoji {
+  margin: 0px;
+  padding: 0px;
+  display: inline !important;
+  vertical-align: text-bottom;
+  border: none;
+  cursor: text;
+  box-shadow: none;
 }
